@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         toPlayer = player.transform.localPosition - transform.position;
-        inRange = (toPlayer.sqrMagnitude < reach);
+        inRange = (toPlayer.sqrMagnitude <= reach);
         //if player is within range or goose is paused
         if (inRange)
         {
@@ -37,39 +37,34 @@ public class EnemyController : MonoBehaviour
             {
                 pauseTimer = 0;
                 hasAttacked = true;
-                Debug.Log("pause reset");
             }
-            if (!hasAttacked)
+            if (!hasAttacked && attackTimer <= 0)
             {
                 attackTimer = attackDelay;
-            }
-            else if (attackTimer <= 0)
+            } else if (attackTimer - Time.deltaTime <= 0)
             {
                 Attack();
                 hasAttacked = true;
                 attackTimer = attackDelay;
             }
+            if (attackTimer > 0)
+            {
+                attackTimer -= Time.deltaTime;
+            }
         }
         else
         {
-            if (!hasAttacked && pauseTimer <= 0)
-            {
-                ChasePlayer();
-            }
             if (hasAttacked && pauseTimer <= 0)
             {
-                Debug.Log("paused");
                 pauseTimer = pauseTime;
                 hasAttacked = false;
-            }
-            if (pauseTimer > 0)
+            }else if (!hasAttacked && pauseTimer <= 0)
+            {
+                ChasePlayer();
+            }else if (pauseTimer > 0)
             {
                 pauseTimer -= Time.deltaTime;
             }
-        }
-        if (attackTimer > 0)
-        {
-            attackTimer -= Time.deltaTime;
         }
     }
 
@@ -80,6 +75,6 @@ public class EnemyController : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("attcked");
+        Debug.Log("attacked");
     }
 }

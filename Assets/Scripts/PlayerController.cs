@@ -14,14 +14,11 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     private Vector2 move;
 
-
-
     void Start()
     {
         
     }
 
-    
     void FixedUpdate()
     {
         move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
