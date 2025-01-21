@@ -75,6 +75,7 @@ public class EnemyController : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("attacked");
+        Debug.Log("enemy attack");
+        player.GetComponent<PlayerController>().TakeDamage(damage);
     }
 }
