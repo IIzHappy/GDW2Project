@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     public float baseAttackDelay;
     private float attackDelay;
-    public float attackTimer;
+    private float attackTimer;
     public float upgradeAttack;
 
     public float baseDamage;
@@ -27,7 +27,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        attackDelay = baseAttackDelay;
         attackTimer = attackDelay;
+        curHP = maxHP;
     }
 
     void FixedUpdate()
@@ -49,6 +51,7 @@ public class PlayerController : MonoBehaviour
         if (curHP == 0)
         {
             Debug.Log("player died");
+            Time.timeScale = 0;
         }
     }
 
