@@ -4,26 +4,17 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private List <GameObject> weapons;
+    private GameObject weapon;
     private List <GameObject> buffs;
 
     public void Start()
     {
-        weapons = new List<GameObject>();
         buffs = new List<GameObject>();
     }
 
     public void Attack()
     {
-        for (int i = 0; i < weapons.Count; i++)
-        {
-            weapons[i].GetComponent<WeaponController>().Attack();
-        }
-    }
-
-    public void AddWeapon(GameObject obj)
-    {
-        weapons.Add(obj);
+        //weapon.GetComponent<WeaponController>().Attack();
     }
 
     public void AddBuff(GameObject obj)

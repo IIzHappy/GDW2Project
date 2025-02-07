@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
 
     public int maxHP;
     private int curHP;
-    public int upgradeHP;
 
     public float moveSpeed;
     private Vector2 move;
@@ -19,17 +18,25 @@ public class PlayerController : MonoBehaviour
     public float baseAttackDelay;
     private float attackDelay;
     private float attackTimer;
-    public float upgradeAttack;
 
-    public float baseDamage;
-    private float damage;
-    public float upgradeDamage;
+    [SerializeField] List<GameObject> projectiles;
+    public GameObject curProjectile;
+    public Transform spawnPos;
+    //public int baseDamage;
+    //private int damage;
+
+
 
     void Start()
     {
         attackDelay = baseAttackDelay;
         attackTimer = attackDelay;
         curHP = maxHP;
+    }
+
+    void Update()
+    {
+
     }
 
     void FixedUpdate()
@@ -60,18 +67,18 @@ public class PlayerController : MonoBehaviour
         curHP = maxHP;
     }
 
-    public void UpgradeHP()
+    public void UpgradeHP(int change)
     {
-        maxHP += upgradeHP;
+        maxHP += change;
     }
 
-    public void UpgradeAttack()
+    public void UpgradeAttack(float change)
     {
-        attackDelay -= upgradeAttack;
+        attackDelay -= change;
     }
 
-    public void UpgradeDamage()
-    {
-        damage += upgradeDamage;
-    }
+    //public void UpgradeDamage(int change)
+    //{
+    //    damage += change;
+    //}
 }

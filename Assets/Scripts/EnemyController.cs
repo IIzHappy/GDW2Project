@@ -12,6 +12,9 @@ public class EnemyController : MonoBehaviour
     Vector2 toPlayer;
     bool inRange = false;
 
+    [SerializeField] public int maxHealth;
+    private int health;
+
     [SerializeField] int damage;
     [SerializeField] float attackDelay; //Time between each attack
     float attackTimer = 0;
@@ -22,7 +25,7 @@ public class EnemyController : MonoBehaviour
 
     void Awake()
     {
-        
+        health = maxHealth;
     }
 
 
@@ -77,5 +80,14 @@ public class EnemyController : MonoBehaviour
     {
         Debug.Log("enemy attack");
         player.GetComponent<PlayerController>().TakeDamage(damage);
+    }
+
+    private void TakeDamage(int dmg)
+    {
+        health -= dmg;
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
