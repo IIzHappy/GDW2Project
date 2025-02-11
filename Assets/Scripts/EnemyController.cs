@@ -41,15 +41,18 @@ public class EnemyController : MonoBehaviour
                 pauseTimer = 0;
                 hasAttacked = true;
             }
+            
             if (!hasAttacked && attackTimer <= 0)
             {
                 attackTimer = attackDelay;
-            } else if (attackTimer - Time.deltaTime <= 0)
+            } 
+            else if (attackTimer - Time.deltaTime <= 0)
             {
                 Attack();
                 hasAttacked = true;
                 attackTimer = attackDelay;
             }
+            
             if (attackTimer > 0)
             {
                 attackTimer -= Time.deltaTime;
@@ -82,7 +85,7 @@ public class EnemyController : MonoBehaviour
         player.GetComponent<PlayerController>().TakeDamage(damage);
     }
 
-    private void TakeDamage(int dmg)
+    public void TakeDamage(int dmg)
     {
         health -= dmg;
         if (health <= 0)
