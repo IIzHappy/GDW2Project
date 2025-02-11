@@ -11,7 +11,7 @@ public class ProjectileController : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        rb.AddForce(new Vector2(500 * -Mathf.Sin((rb.rotation * Mathf.Deg2Rad)), 500 * Mathf.Cos((rb.rotation * Mathf.Deg2Rad))));
+        rb.AddForce(new Vector2(500 * Mathf.Sin((rb.rotation * Mathf.Deg2Rad)), 500 * Mathf.Cos((rb.rotation * Mathf.Deg2Rad))));
         Debug.Log(Mathf.Cos(rb.rotation));
     }
 
