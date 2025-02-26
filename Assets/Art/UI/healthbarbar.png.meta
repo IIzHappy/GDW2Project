@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4116f78b683a61e4aa960eb182b8525c
+guid: b73565fb8400d094482d85bccf7e6ca1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5521503060725269866
-    second: duck 1_0
+      213: -4201324100131057328
+    second: healthbarbar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: duck 1_0
+      name: healthbarbar_0
       rect:
         serializedVersion: 2
-        x: 193
-        y: 256
-        width: 526
-        height: 483
+        x: 6
+        y: 0
+        width: 399
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a6503c097c150ac40800000000000000
-      internalID: 5521503060725269866
+      spriteID: 05196619df5e1b5c0800000000000000
+      internalID: -4201324100131057328
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      duck 1_0: 5521503060725269866
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
