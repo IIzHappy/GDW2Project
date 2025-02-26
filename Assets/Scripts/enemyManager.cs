@@ -6,6 +6,7 @@ public class enemyManager : MonoBehaviour
     [SerializeField] GameObject enemy1;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
+    [SerializeField] GameObject enemyManagerGO;
     float timer;
     float waveNum = 1f;
     public float universalTimer;
@@ -16,14 +17,14 @@ public class enemyManager : MonoBehaviour
     {
         timer -= Time.deltaTime;
         universalTimer += Time.deltaTime;
-        if (timer < 0f)
+        if (timer < 0f && waveChange == false)
         {
             SpawnEnemy();
             timer = spawnTimer;
         }
         if (universalTimer > 10f)
         {
-            if (waveChange == true)
+            if (waveChange == true && enemyManagerGO.transform.childCount == 0)
             {
                 spawnTimer = spawnTimer = 0.5f;
                 waveChange = false;
