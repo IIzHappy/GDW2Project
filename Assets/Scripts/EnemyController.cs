@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
-    [SerializeField] GameObject player;
+    public GameObject player;
 
     [SerializeField] public float moveSpeed;
     [SerializeField] float reach; //distance from player to do dmg
