@@ -989,6 +989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1087742656}
   skins: []
+  healthBar: {fileID: 0}
   maxHP: 5
   moveSpeed: 38
   upgradeSpeed: 2
@@ -1161,10 +1162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f16789c4f170443854a2bc484f8442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 6790453613484793021, guid: 68f2750a3ba477947bec0af332440d7a, type: 3}
+  enemy1: {fileID: 6790453613484793021, guid: 68f2750a3ba477947bec0af332440d7a, type: 3}
   spawnArea: {x: 10, y: 6}
   spawnTimer: 1
+  universalTimer: 0
   Player: {fileID: 1087742653}
+  waveChange: 1
 --- !u!4 &1164351302
 Transform:
   m_ObjectHideFlags: 0
@@ -1174,7 +1177,7 @@ Transform:
   m_GameObject: {fileID: 1164351300}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1079354, y: -0.40468335, z: 0.036550988}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
