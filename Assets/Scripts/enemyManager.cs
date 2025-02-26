@@ -7,11 +7,11 @@ public class enemyManager : MonoBehaviour
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
     [SerializeField] GameObject enemyManagerGO;
-    float timer;
+   public float timer;
     float waveNum = 1f;
     public float universalTimer;
     public GameObject Player;
-    public bool waveChange = true;
+    public bool waveChange = false;
 
     private void Update()
     {
@@ -24,11 +24,14 @@ public class enemyManager : MonoBehaviour
         }
         if (universalTimer > 10f)
         {
+            waveChange = true;
             if (waveChange == true && enemyManagerGO.transform.childCount == 0)
             {
-                spawnTimer = spawnTimer = 0.5f;
+                spawnTimer = spawnTimer * 0.9f;
                 waveChange = false;
+                universalTimer = 0f;
             }
+
         }
     }
 
@@ -43,6 +46,7 @@ public class enemyManager : MonoBehaviour
         spawnedEnemy.transform.position = position;
         spawnedEnemy.GetComponent<EnemyController>().player = Player;
         spawnedEnemy.transform.parent = transform;
+       
     }
 
     private Vector3 GenerateSpawnPosition()
