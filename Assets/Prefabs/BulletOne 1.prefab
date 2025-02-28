@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7317608831167627520}
   - component: {fileID: 1321471181541862493}
   - component: {fileID: 5424133110746277434}
-  - component: {fileID: 6088235276685220460}
+  - component: {fileID: 4065023413742328061}
   m_Layer: 7
   m_Name: BulletOne 1
   m_TagString: Untagged
@@ -154,7 +154,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.0000002, y: 2.0000005}
   m_Direction: 0
---- !u!114 &6088235276685220460
+--- !u!114 &4065023413742328061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,5 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 500
   damage: 4
+  lifeSpan: 1
+  expire: 0
   rb: {fileID: 1321471181541862493}
   direction: {x: 0, y: 0}

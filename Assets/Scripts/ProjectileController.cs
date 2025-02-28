@@ -5,6 +5,8 @@ public class ProjectileController : MonoBehaviour
 
     [SerializeField] private float speed;
     [SerializeField] private int damage;
+    [SerializeField] private float lifeSpan;
+    [SerializeField] private bool expire = false;
 
     [SerializeField] private Rigidbody2D rb;
 
@@ -13,10 +15,19 @@ public class ProjectileController : MonoBehaviour
     
     void Start()
     {
-        //transform.LookAt(direction);
         rb.AddForce(direction * speed);
-        //rb.AddForce(new Vector2(500 * Mathf.Sin((rb.rotation * Mathf.Deg2Rad)), 500 * Mathf.Cos((rb.rotation * Mathf.Deg2Rad))));
-        //Debug.Log(Mathf.Cos(rb.rotation));
+    }
+
+    void Update()
+    {
+        if (expire)
+        {
+            lifeSpan -= Time.deltaTime;
+            if (lifeSpan <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     public void UpgradeDamage(int dmg)
