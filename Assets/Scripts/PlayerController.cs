@@ -21,13 +21,16 @@ public class PlayerController : MonoBehaviour
     public float baseAttackDelay;
     private float attackDelay;
     private float attackTimer;
+    private Vector2 mouseAim;
 
     private int damageLevel = 0;
 
     [SerializeField] List<GameObject> projectiles;
     public GameObject curProjectile;
+    public Transform rotatePos;
     public Transform spawnPos;
 
+    private bool faceLeft = true;
 
 
     void Start()
@@ -47,10 +50,29 @@ public class PlayerController : MonoBehaviour
     {
         move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
         rb.AddForce(move);
+
+        mouseAim = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position) - rotatePos.position;
+        float angle = Mathf.Atan2(mouseAim.y, mouseAim.x) * Mathf.Rad2Deg;
+
+        rotatePos.rotation = Quaternion.AngleAxis(angle + 180, Vector3.forward);
+        if (Mathf.Abs(angle) < 90 && faceLeft)
+        {
+            Debug.Log("turn right");
+            faceLeft = false;
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (Mathf.Abs(angle) > 90 && !faceLeft)
+        {
+            Debug.Log("turn left");
+            faceLeft = true;
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
         if (attackTimer <= 0)
         {
+
             Debug.Log("player attack");
-            GameObject temp = Instantiate(curProjectile, spawnPos);
+            GameObject temp = Instantiate(curProjectile, spawnPos.position, Quaternion.AngleAxis(angle, Vector3.forward));
+            temp.GetComponent<ProjectileController>().direction = mouseAim.normalized;
             temp.GetComponent<ProjectileController>().UpgradeDamage(2 * damageLevel);
             attackTimer = attackDelay;
         }

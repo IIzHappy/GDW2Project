@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        toPlayer = player.transform.localPosition - transform.position;
+        toPlayer = player.transform.position - transform.position;
         inRange = (toPlayer.sqrMagnitude <= reach);
         //if player is within range or goose is paused
         if (inRange)

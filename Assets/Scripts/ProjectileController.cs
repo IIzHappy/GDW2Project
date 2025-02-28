@@ -8,11 +8,15 @@ public class ProjectileController : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
 
-    // Update is called once per frame
+    public Vector2 direction;
+
+    
     void Start()
     {
-        rb.AddForce(new Vector2(500 * Mathf.Sin((rb.rotation * Mathf.Deg2Rad)), 500 * Mathf.Cos((rb.rotation * Mathf.Deg2Rad))));
-        Debug.Log(Mathf.Cos(rb.rotation));
+        //transform.LookAt(direction);
+        rb.AddForce(direction * speed);
+        //rb.AddForce(new Vector2(500 * Mathf.Sin((rb.rotation * Mathf.Deg2Rad)), 500 * Mathf.Cos((rb.rotation * Mathf.Deg2Rad))));
+        //Debug.Log(Mathf.Cos(rb.rotation));
     }
 
     public void UpgradeDamage(int dmg)
