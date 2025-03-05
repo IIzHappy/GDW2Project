@@ -79,7 +79,7 @@ public class EnemyController : MonoBehaviour
         rb.AddForce(toPlayer.normalized * moveSpeed);
     }
 
-    private void Attack()
+    protected virtual void Attack()
     {
         Debug.Log("enemy attack");
         player.GetComponent<PlayerController>().TakeDamage(damage);
