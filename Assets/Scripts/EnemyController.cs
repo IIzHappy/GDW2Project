@@ -31,8 +31,7 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        toPlayer = player.transform.position - transform.position;
-        inRange = (toPlayer.sqrMagnitude <= reach);
+        FindPlayer();
         //if player is within range or goose is paused
         if (inRange)
         {
@@ -72,6 +71,13 @@ public class EnemyController : MonoBehaviour
                 pauseTimer -= Time.deltaTime;
             }
         }
+    }
+
+    protected virtual void FindPlayer()
+    {
+        toPlayer = player.transform.position - transform.position;
+        inRange = (toPlayer.sqrMagnitude <= reach);
+
     }
 
     public void ChasePlayer()
