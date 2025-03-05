@@ -4,22 +4,78 @@ using UnityEngine;
 public class enemyManager : MonoBehaviour
 {
     [SerializeField] GameObject enemy1;
+    [SerializeField] GameObject enemy2;
+    [SerializeField] GameObject enemy3;
+    [SerializeField] GameObject enemy4;
+    [SerializeField] GameObject boss1;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
     [SerializeField] GameObject enemyManagerGO;
    public float timer;
-    float waveNum = 1f;
+    public float timer2;
+   public float waveNum = 1f;
     public float universalTimer;
     public GameObject Player;
+    private GameObject Boss;
     public bool waveChange = false;
+    private bool bossSpawned = false;
+    public bool bossKilled = false;
 
     private void Update()
     {
         timer -= Time.deltaTime;
+        timer2 -= Time.deltaTime;
         universalTimer += Time.deltaTime;
+        if( waveNum == 1)
+        {
+            waveOneSpawning();
+        }
+        if( waveNum == 2)
+        {
+            waveTwoSpawning();
+        }
+        if (waveNum == 3)
+        {
+            waveThreeSpawning();
+        }
+        if (waveNum == 4)
+        {
+            waveFourSpawning();
+        }
+        if (waveNum == 5)
+        {
+            waveFiveSpawning();
+        }
+        if (waveNum == 6)
+        {
+            waveSixSpawning();
+        }
+        if (waveNum == 7)
+        {
+            waveSevenSpawning();
+        }
+        if (waveNum == 8)
+        {
+            waveEightSpawning();
+        }
+        if (waveNum == 9)
+        {
+            waveNineSpawning();
+        }
+        if (waveNum == 10)
+        {
+            waveTenSpawning();
+        }
+    }
+
+
+
+
+ private void waveOneSpawning()
+    {
         if (timer < 0f && waveChange == false)
         {
-            SpawnEnemy();
+            SpawnEnemyOne();
             timer = spawnTimer;
         }
         if (universalTimer > 10f)
@@ -27,15 +83,251 @@ public class enemyManager : MonoBehaviour
             waveChange = true;
             if (waveChange == true && enemyManagerGO.transform.childCount == 0)
             {
-                spawnTimer = spawnTimer * 0.9f;
+                spawnTimer = spawnTimer - 0.1f;
                 waveChange = false;
                 universalTimer = 0f;
+                waveNum++;
             }
 
         }
     }
 
-    private void SpawnEnemy()
+    private void waveTwoSpawning()
+    {
+        if (timer < 0f && waveChange == false)
+        {
+            SpawnEnemyOne();
+            timer = spawnTimer;
+        }
+        if (universalTimer > 20f)
+        {
+            waveChange = true;
+            if (waveChange == true && enemyManagerGO.transform.childCount == 0)
+            {
+                spawnTimer = spawnTimer + 1.1f;
+                waveChange = false;
+                universalTimer = 0f;
+                waveNum++;
+            }
+
+        }
+    }
+
+    private void waveThreeSpawning()
+    {
+        if (timer < 0f && waveChange == false)
+        {
+            SpawnEnemyTwo();
+            timer = spawnTimer;
+        }
+        if (universalTimer > 25f)
+        {
+            waveChange = true;
+            if (waveChange == true && enemyManagerGO.transform.childCount == 0)
+            {
+                spawnTimer = spawnTimer - 0.5f;
+                waveChange = false;
+                universalTimer = 0f;
+                waveNum++;
+            }
+
+        }
+    }
+
+    private void waveFourSpawning()
+    {
+        if (timer < 0f && waveChange == false)
+        {
+            SpawnEnemyTwo();
+            timer = spawnTimer;
+        }
+        if (timer2 < spawnTimer / 4f && waveChange == false)
+        {
+            SpawnEnemyOne();
+            timer2 = spawnTimer;
+        }
+        if (universalTimer > 30f)
+        {
+            waveChange = true;
+            if (waveChange == true && enemyManagerGO.transform.childCount == 0)
+            {
+                spawnTimer = spawnTimer - 0.5f;
+                waveChange = false;
+                universalTimer = 0f;
+                waveNum++;
+            }
+
+        }
+    }
+
+    private void waveFiveSpawning()
+    {
+
+        if (timer < 0f && waveChange == false)
+        {
+            SpawnEnemyTwo();
+            timer = spawnTimer;
+        }
+        if (timer2 < spawnTimer / 2f && waveChange == false)
+        {
+            SpawnEnemyOne();
+            timer2 = spawnTimer;
+        }
+        if (universalTimer > 15f)
+        {
+            waveChange = true;
+            if (waveChange == true && enemyManagerGO.transform.childCount == 0)
+            {
+                spawnTimer = spawnTimer + 1.0f;
+                waveChange = false;
+                universalTimer = 0f;
+                waveNum++;
+            }
+
+        }
+
+    }
+
+    private void waveSixSpawning()
+    {
+        if (timer < 0f && waveChange == false)
+        {
+            SpawnEnemyThree();
+            timer = spawnTimer;
+        }
+        if (universalTimer > 20f)
+        {
+            waveChange = true;
+            if (waveChange == true && enemyManagerGO.transform.childCount == 0)
+            {
+                spawnTimer = spawnTimer + 0f;
+                waveChange = false;
+                universalTimer = 0f;
+                waveNum++;
+            }
+
+        }
+
+    }
+
+    private void waveSevenSpawning()
+    {
+        if (timer < 0f && waveChange == false)
+        {
+            SpawnEnemyThree();
+            timer = spawnTimer;
+        }
+        if (timer2 < spawnTimer / 2f && waveChange == false)
+        {
+            SpawnEnemyOne();
+            timer = spawnTimer;
+        }
+        if (universalTimer > 30f)
+        {
+            waveChange = true;
+            if (waveChange == true && enemyManagerGO.transform.childCount == 0)
+            {
+                spawnTimer = spawnTimer - 1.0f;
+                waveChange = false;
+                universalTimer = 0f;
+                waveNum++;
+            }
+
+        }
+    }
+
+    private void waveEightSpawning() {
+        if (timer < 0f && waveChange == false)
+        {
+            SpawnEnemyFour();
+            timer = spawnTimer;
+        }
+        if (timer2 < spawnTimer / 4f && waveChange == false)
+        {
+            SpawnEnemyTwo();
+            timer = spawnTimer;
+        }
+        if (universalTimer > 20f)
+        {
+            waveChange = true;
+            if (waveChange == true && enemyManagerGO.transform.childCount == 0)
+            {
+                spawnTimer = spawnTimer + 1.0f;
+                waveChange = false;
+                universalTimer = 0f;
+                waveNum++;
+            }
+
+        }
+    }
+
+    private void waveNineSpawning()
+    {
+        if (timer < 0f && waveChange == false)
+        {
+            SpawnEnemyFour();
+            SpawnEnemyThree();
+            SpawnEnemyTwo();
+            timer = spawnTimer;
+        }
+        if (timer2 < spawnTimer / 2f && waveChange == false)
+        {
+            SpawnEnemyOne();
+            timer = spawnTimer;
+        }
+        if (universalTimer > 15f)
+        {
+            waveChange = true;
+            if (waveChange == true && enemyManagerGO.transform.childCount == 0)
+            {
+                spawnTimer = spawnTimer +0f;
+                waveChange = false;
+                universalTimer = 0f;
+                waveNum++;
+            }
+
+        }
+
+    }
+
+    private void waveTenSpawning()
+    {
+        if (bossSpawned == false)
+        {
+            SpawnBossOne();
+            bossSpawned = true;
+        }
+        if (timer < 0f && waveChange == false)
+        {
+            SpawnEnemyFour();
+            SpawnEnemyTwo();
+            timer = spawnTimer;
+        }
+        if (timer2 < spawnTimer / 4f && waveChange == false)
+        {
+            SpawnEnemyOne();
+            SpawnEnemyThree();
+            timer = spawnTimer;
+        }
+        if (universalTimer > 40f && bossKilled == true)
+        {
+            waveChange = true;
+            if (waveChange == true && enemyManagerGO.transform.childCount == 0)
+            {
+                spawnTimer = spawnTimer + 1.1f;
+                waveChange = false;
+                universalTimer = 0f;
+                waveNum++;
+            }
+
+        }
+
+    }
+
+
+
+    // spawning logic
+    private void SpawnEnemyOne()
     {
         Vector3 position = GenerateSpawnPosition();
           
@@ -47,6 +339,61 @@ public class enemyManager : MonoBehaviour
         spawnedEnemy.GetComponent<EnemyController>().player = Player;
         spawnedEnemy.transform.parent = transform;
        
+    }
+
+    private void SpawnEnemyTwo()
+    {
+        Vector3 position = GenerateSpawnPosition();
+
+
+
+        position += Player.transform.position;
+        GameObject spawnedEnemy = Instantiate(enemy2);
+        spawnedEnemy.transform.position = position;
+        spawnedEnemy.GetComponent<EnemyController>().player = Player;
+        spawnedEnemy.transform.parent = transform;
+
+    }
+
+    private void SpawnEnemyThree()
+    {
+        Vector3 position = GenerateSpawnPosition();
+
+
+
+        position += Player.transform.position;
+        GameObject spawnedEnemy = Instantiate(enemy3);
+        spawnedEnemy.transform.position = position;
+        spawnedEnemy.GetComponent<EnemyController>().player = Player;
+        spawnedEnemy.transform.parent = transform;
+
+    }
+
+    private void SpawnEnemyFour()
+    {
+        Vector3 position = GenerateSpawnPosition();
+
+
+
+        position += Player.transform.position;
+        GameObject spawnedEnemy = Instantiate(enemy4);
+        spawnedEnemy.transform.position = position;
+        spawnedEnemy.GetComponent<EnemyController>().player = Player;
+        spawnedEnemy.transform.parent = transform;
+    }
+
+    private void SpawnBossOne()
+    {
+        Vector3 position = GenerateSpawnPosition();
+
+
+
+        position += Player.transform.position;
+        GameObject spawnedEnemy = Instantiate(boss1);
+        Boss = spawnedEnemy;
+        spawnedEnemy.transform.position = position;
+        spawnedEnemy.GetComponent<EnemyController>().player = Player;
+        spawnedEnemy.transform.parent = transform;
     }
 
     private Vector3 GenerateSpawnPosition()

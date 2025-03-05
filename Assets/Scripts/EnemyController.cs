@@ -6,11 +6,11 @@ public class EnemyController : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     public GameObject player;
 
-    [SerializeField] public float moveSpeed;
-    [SerializeField] float reach; //distance from player to do dmg
+     public float moveSpeed;
+    public float reach; //distance from player to do dmg
 
-    Vector2 toPlayer;
-    bool inRange = false;
+    public Vector2 toPlayer;
+   public bool inRange = false;
 
     [SerializeField] public int maxHealth;
     private int health;
