@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     public int maxHP;
     private int curHP;
+    private int armourLevel = 0;
 
     public float moveSpeed;
     private Vector2 move;
@@ -81,11 +82,14 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        curHP = Mathf.Clamp(curHP - damage, 0, maxHP);
-        healthBar.fillAmount = (float) curHP / (float) maxHP;
-        if (curHP == 0)
+        if (Random.Range(0, 10) >= armourLevel)
         {
-            Time.timeScale = 0;
+            curHP = Mathf.Clamp(curHP - damage, 0, maxHP);
+            healthBar.fillAmount = (float)curHP / (float)maxHP;
+            if (curHP == 0)
+            {
+                Time.timeScale = 0;
+            }
         }
     }
 
@@ -99,8 +103,23 @@ public class PlayerController : MonoBehaviour
         maxHP += change;
     }
 
-    public void UpgradeAttack(float change)
+    public void UpgradeAttackSpeed(float change)
     {
         attackDelay -= change;
+    }
+
+    public void UpgradeAttackDamage()
+    {
+        damageLevel++;
+    }
+
+    public void UpgradeSpeed(float change)
+    {
+        moveSpeed += change;
+    }
+
+    public void UpgradeArmour()
+    {
+        armourLevel++;
     }
 }
