@@ -119,6 +119,7 @@ public class enemyManager : MonoBehaviour
                 waveChange = false;
                 universalTimer = 0f;
                 waveNum++;
+                pc.StartUpgrade();
             }
 
         }
@@ -140,6 +141,7 @@ public class enemyManager : MonoBehaviour
                 waveChange = false;
                 universalTimer = 0f;
                 waveNum++;
+                pc.StartUpgrade();
             }
 
         }
@@ -166,6 +168,7 @@ public class enemyManager : MonoBehaviour
                 waveChange = false;
                 universalTimer = 0f;
                 waveNum++;
+                pc.StartUpgrade();
             }
 
         }
@@ -193,6 +196,7 @@ public class enemyManager : MonoBehaviour
                 waveChange = false;
                 universalTimer = 0f;
                 waveNum++;
+                pc.StartUpgrade();
             }
 
         }
@@ -215,6 +219,7 @@ public class enemyManager : MonoBehaviour
                 waveChange = false;
                 universalTimer = 0f;
                 waveNum++;
+                pc.StartUpgrade();
             }
 
         }
@@ -242,6 +247,7 @@ public class enemyManager : MonoBehaviour
                 waveChange = false;
                 universalTimer = 0f;
                 waveNum++;
+                pc.StartUpgrade();
             }
 
         }
@@ -267,6 +273,7 @@ public class enemyManager : MonoBehaviour
                 waveChange = false;
                 universalTimer = 0f;
                 waveNum++;
+                pc.StartUpgrade();
             }
 
         }
@@ -295,6 +302,7 @@ public class enemyManager : MonoBehaviour
                 waveChange = false;
                 universalTimer = 0f;
                 waveNum++;
+                pc.StartUpgrade();
             }
 
         }
