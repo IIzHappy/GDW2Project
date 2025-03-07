@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Image healthBar;
 
+    [SerializeField] GameObject upgradeScreen;
+    [SerializeField] GameObject UIScreen;
+
     public int maxHP;
     private int curHP;
     private int armourLevel = 0;
@@ -121,5 +124,19 @@ public class PlayerController : MonoBehaviour
     public void UpgradeArmour()
     {
         armourLevel++;
+    }
+
+    public void StartUpgrade()
+    {
+        UIScreen.SetActive(false);
+        upgradeScreen.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void EndUpgrade()
+    {
+        UIScreen.SetActive(true);
+        upgradeScreen.SetActive(false);
+        Time.timeScale = 1;
     }
 }

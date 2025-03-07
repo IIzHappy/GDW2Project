@@ -937,6 +937,8 @@ MonoBehaviour:
   rb: {fileID: 1087742656}
   skins: []
   healthBar: {fileID: 4234907}
+  upgradeScreen: {fileID: 0}
+  UIScreen: {fileID: 0}
   maxHP: 5
   moveSpeed: 38
   upgradeSpeed: 2
@@ -1111,13 +1113,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy1: {fileID: 6790453613484793021, guid: 68f2750a3ba477947bec0af332440d7a, type: 3}
+  enemy2: {fileID: 0}
+  enemy3: {fileID: 0}
+  enemy4: {fileID: 0}
+  boss1: {fileID: 0}
   spawnArea: {x: 10, y: 6}
   spawnTimer: 1
   enemyManagerGO: {fileID: 1164351300}
   timer: 0
+  timer2: 0
+  waveNum: 1
   universalTimer: 0
   Player: {fileID: 1087742653}
   waveChange: 1
+  bossKilled: 0
 --- !u!4 &1164351302
 Transform:
   m_ObjectHideFlags: 0

@@ -16,10 +16,16 @@ public class enemyManager : MonoBehaviour
    public float waveNum = 1f;
     public float universalTimer;
     public GameObject Player;
+    private PlayerController pc;
     private GameObject Boss;
     public bool waveChange = false;
     private bool bossSpawned = false;
     public bool bossKilled = false;
+
+    void Start()
+    {
+        pc = Player.GetComponent<PlayerController>();
+    }
 
     private void Update()
     {
@@ -87,6 +93,7 @@ public class enemyManager : MonoBehaviour
                 waveChange = false;
                 universalTimer = 0f;
                 waveNum++;
+                pc.StartUpgrade();
             }
 
         }
