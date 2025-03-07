@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
-
     [SerializeField] private float speed;
     [SerializeField] private int damage;
     [SerializeField] private float lifeSpan;
     [SerializeField] private bool expire = false;
+    [SerializeField] private bool destroyOnCollision = true;
 
     [SerializeField] private Rigidbody2D rb;
 
     public Vector2 direction;
-
     
     void Start()
     {
@@ -40,7 +39,14 @@ public class ProjectileController : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyController>().TakeDamage(damage);
-            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
+        }
+        if (destroyOnCollision)
+        {
+            Destroy(gameObject);
         }
     }
 }

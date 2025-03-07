@@ -6,26 +6,30 @@ public class EnemyController : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     public GameObject player;
 
-     public float moveSpeed;
+    public float moveSpeed;
     public float reach; //distance from player to do dmg
 
     public Vector2 toPlayer;
-   public bool inRange = false;
+    public bool inRange = false;
 
-    [SerializeField] public int maxHealth;
+    public int maxHealth;
     private int health;
 
-    [SerializeField] int damage;
-    [SerializeField] float attackDelay; //Time between each attack
+    public int damage;
+    public float attackDelay; //Time between each attack
     float attackTimer = 0;
     bool hasAttacked = false;
-    [SerializeField] float pauseTime; //Time before enemy starts chasing player after pausing
+    public float pauseTime; //Time before enemy starts chasing player after pausing
     float pauseTimer = 0;
 
 
     void Awake()
     {
         health = maxHealth;
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
     }
 
 
@@ -77,7 +81,6 @@ public class EnemyController : MonoBehaviour
     {
         toPlayer = player.transform.position - transform.position;
         inRange = (toPlayer.sqrMagnitude <= reach);
-
     }
 
     public void ChasePlayer()
@@ -87,7 +90,7 @@ public class EnemyController : MonoBehaviour
 
     protected virtual void Attack()
     {
-        Debug.Log("enemy attack");
+        Debug.Log(gameObject.name.ToString() + " goose attack - " + damage);
         player.GetComponent<PlayerController>().TakeDamage(damage);
     }
 
