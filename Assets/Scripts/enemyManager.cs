@@ -72,6 +72,10 @@ public class enemyManager : MonoBehaviour
         {
             waveTenSpawning();
         }
+        if (boss1 == null)
+        {
+            bossKilled = true;
+        }
     }
 
 
@@ -227,7 +231,7 @@ public class enemyManager : MonoBehaviour
         if (timer2 < spawnTimer / 2f && waveChange == false)
         {
             SpawnEnemyOne();
-            timer = spawnTimer;
+            timer2 = spawnTimer;
         }
         if (universalTimer > 30f)
         {
@@ -252,7 +256,7 @@ public class enemyManager : MonoBehaviour
         if (timer2 < spawnTimer / 4f && waveChange == false)
         {
             SpawnEnemyTwo();
-            timer = spawnTimer;
+            timer2 = spawnTimer;
         }
         if (universalTimer > 20f)
         {
@@ -280,7 +284,7 @@ public class enemyManager : MonoBehaviour
         if (timer2 < spawnTimer / 2f && waveChange == false)
         {
             SpawnEnemyOne();
-            timer = spawnTimer;
+            timer2 = spawnTimer;
         }
         if (universalTimer > 15f)
         {
@@ -314,7 +318,7 @@ public class enemyManager : MonoBehaviour
         {
             SpawnEnemyOne();
             SpawnEnemyThree();
-            timer = spawnTimer;
+            timer2 = spawnTimer;
         }
         if (universalTimer > 40f && bossKilled == true)
         {
@@ -401,6 +405,7 @@ public class enemyManager : MonoBehaviour
         spawnedEnemy.transform.position = position;
         spawnedEnemy.GetComponent<EnemyController>().player = Player;
         spawnedEnemy.transform.parent = transform;
+        Boss.GetComponent<BossOneController>().enemyM = gameObject;
     }
 
     private Vector3 GenerateSpawnPosition()

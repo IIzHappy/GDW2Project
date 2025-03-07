@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 public class BossOneController : EnemyController
 {
     public GameObject BossBeam;
+    public GameObject enemyM;
+    
     protected override void Attack()
     {
         Vector2 BeamPosition = transform.position;
@@ -36,5 +38,11 @@ public class BossOneController : EnemyController
         }
        // inRange = (range);
 
+    }
+
+    private void OnDestroy()
+    {
+        enemyM.GetComponent<enemyManager>().bossKilled = true;
+        Debug.Log("boss is dead");
     }
 }
