@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     public bool inRange = false;
 
     public int maxHealth;
-    private int health;
+    protected int health;
 
     public int damage;
     public float attackDelay; //Time between each attack
@@ -94,7 +94,7 @@ public class EnemyController : MonoBehaviour
         player.GetComponent<PlayerController>().TakeDamage(damage);
     }
 
-    public void TakeDamage(int dmg)
+    public virtual void TakeDamage(int dmg)
     {
         health -= dmg;
         if (health <= 0)
