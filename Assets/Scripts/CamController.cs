@@ -20,7 +20,7 @@ public class CamController : MonoBehaviour
         cam = GetComponent<Camera>();
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         Vector3 targetPosition = target.position + posOffset;
 

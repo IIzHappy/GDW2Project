@@ -1,16 +1,19 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
     public GameObject player;
+    private SpriteRenderer sr;
+    private bool faceLeft = true;
 
     public float moveSpeed;
     public float reach; //distance from player to do dmg
 
-    public Vector2 toPlayer;
-    public bool inRange = false;
+    protected Vector2 toPlayer;
+    protected bool inRange = false;
 
     public int maxHealth;
     protected int health;
@@ -26,16 +29,25 @@ public class EnemyController : MonoBehaviour
     void Awake()
     {
         health = maxHealth;
-        if (player == null)
-        {
-            player = GameObject.FindGameObjectWithTag("Player");
-        }
+        player = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
-
 
     void FixedUpdate()
     {
         FindPlayer();
+        if (toPlayer.x > 0 && faceLeft)
+        {
+            faceLeft = false;
+            sr.flipX = true;
+        }
+        else if (toPlayer.x < 0 && !faceLeft)
+        {
+            faceLeft = true;
+            sr.flipX = false;
+        }
+
         //if player is within range or goose is paused
         if (inRange)
         {
@@ -67,10 +79,12 @@ public class EnemyController : MonoBehaviour
             {
                 pauseTimer = pauseTime;
                 hasAttacked = false;
-            }else if (!hasAttacked && pauseTimer <= 0)
+            }
+            else if (!hasAttacked && pauseTimer <= 0)
             {
                 ChasePlayer();
-            }else if (pauseTimer > 0)
+            }
+            else if (pauseTimer > 0)
             {
                 pauseTimer -= Time.deltaTime;
             }
@@ -90,7 +104,6 @@ public class EnemyController : MonoBehaviour
 
     protected virtual void Attack()
     {
-        Debug.Log(gameObject.name.ToString() + " goose attack - " + damage);
         player.GetComponent<PlayerController>().TakeDamage(damage);
     }
 
@@ -101,5 +114,9 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+    public virtual void Heal(int healing)
+    {
+        health = Mathf.Clamp(health + healing, health, maxHealth);
     }
 }
