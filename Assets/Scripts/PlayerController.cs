@@ -73,7 +73,6 @@ public class PlayerController : MonoBehaviour
         }
         if (attackTimer <= 0)
         {
-
             Debug.Log("player attack");
             GameObject temp = Instantiate(curProjectile, spawnPos.position, Quaternion.AngleAxis(angle, Vector3.forward));
             temp.GetComponent<ProjectileController>().direction = mouseAim.normalized;
