@@ -414,6 +414,7 @@ public class enemyManager : MonoBehaviour
         spawnedEnemy.GetComponent<EnemyController>().player = Player;
         spawnedEnemy.transform.parent = transform;
         Boss.GetComponent<BossOneController>().enemyM = gameObject;
+        Boss.GetComponent<BossOneController>().player = Player;
     }
 
     private Vector3 GenerateSpawnPosition()

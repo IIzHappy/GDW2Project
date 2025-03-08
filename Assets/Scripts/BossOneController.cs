@@ -21,7 +21,8 @@ public class BossOneController : EnemyController
         }
         GameObject Beam = Instantiate(BossBeam);
         Beam.transform.position = BeamPosition;
-        
+        Beam.transform.parent = transform;
+
 
     }
 
