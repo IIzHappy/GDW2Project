@@ -29,6 +29,7 @@ public class BossBeamScript : MonoBehaviour
         {
             GetComponentInParent<BossOneController>().moveSpeed = 23f;
             Destroy(gameObject);
+
         }
         if (Timer > 1f && playerPresent && hasAttacked == false) {
             gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);

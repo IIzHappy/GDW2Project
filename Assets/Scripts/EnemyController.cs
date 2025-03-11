@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     public int damage;
     public float attackDelay; //Time between each attack
     float attackTimer = 0;
-    bool hasAttacked = false;
+    protected bool hasAttacked = false;
     public float pauseTime; //Time before enemy starts chasing player after pausing
     float pauseTimer = 0;
 

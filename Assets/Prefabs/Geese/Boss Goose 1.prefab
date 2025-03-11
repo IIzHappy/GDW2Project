@@ -169,8 +169,8 @@ MonoBehaviour:
   player: {fileID: 0}
   moveSpeed: 23
   reach: 0
-  maxHealth: 1000
-  damage: 1
+  maxHealth: 50
+  damage: 2
   attackDelay: 6
   pauseTime: 0.4
   BossBeam: {fileID: 8315495998408902865, guid: 0b88ea314c52fe941870dae7266bd65a, type: 3}

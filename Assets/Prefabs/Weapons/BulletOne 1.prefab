@@ -167,8 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
-  damage: 4
+  damage: 1
   lifeSpan: 3
   expire: 1
+  destroyOnCollision: 1
   rb: {fileID: 1321471181541862493}
   direction: {x: 0, y: 0}
