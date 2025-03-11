@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
     float attackTimer = 0;
     protected bool hasAttacked = false;
     public float pauseTime; //Time before enemy starts chasing player after pausing
-    float pauseTimer = 0;
+   protected float pauseTimer = 0;
 
 
     void Awake()
