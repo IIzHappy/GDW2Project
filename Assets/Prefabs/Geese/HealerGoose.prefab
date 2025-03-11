@@ -173,6 +173,7 @@ MonoBehaviour:
   maxHealth: 5
   damage: 0
   attackDelay: 2
+  attackTimer: 0
   pauseTime: 2
   heal: {fileID: 3811137887605026532, guid: 0bd70b6fc6859d247a31378acf590df1, type: 3}
 --- !u!58 &5464398792602643813
