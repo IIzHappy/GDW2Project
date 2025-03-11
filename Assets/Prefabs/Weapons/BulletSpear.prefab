@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6147718592207731492}
   - component: {fileID: 309164107335418330}
   - component: {fileID: 5053123666777738440}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletSpear
   m_TagString: Projectile
   m_Icon: {fileID: 0}
