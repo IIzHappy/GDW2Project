@@ -2014,7 +2014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &476787737
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2441,7 +2441,7 @@ MonoBehaviour:
   enemyManagerGO: {fileID: 1164351300}
   timer: 0
   timer2: 0
-  waveNum: 1
+  waveNum: 3
   universalTimer: 0
   Player: {fileID: 7278550300706593719}
   waveChange: 0

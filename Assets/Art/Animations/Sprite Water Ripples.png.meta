@@ -117,6 +117,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -309,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sprite Water Ripples_0: 5588093026918980348
+      Sprite Water Ripples_1: 8510444554365496809
+      Sprite Water Ripples_2: 1684604363244721118
+      Sprite Water Ripples_3: -1909606917171895006
+      Sprite Water Ripples_4: 8572656116861625367
+      Sprite Water Ripples_5: 3841759955597056112
+      Sprite Water Ripples_6: 3298857884836765154
+      Sprite Water Ripples_7: -7100816284972192163
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
