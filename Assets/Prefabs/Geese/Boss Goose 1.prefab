@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5994343040635888467}
   - component: {fileID: 3091781520972914504}
   - component: {fileID: 4804931431141350864}
-  - component: {fileID: 4106761889227813158}
   - component: {fileID: 4197461749516495366}
   m_Layer: 0
   m_Name: Boss Goose 1
@@ -79,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8501172392470417378, guid: 18c57786f1dfa9143980ee23b26e14cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -154,28 +153,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4106761889227813158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6790453613484793021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ea560c48829f5547ad95a80308a7b88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 4804931431141350864}
-  player: {fileID: 0}
-  moveSpeed: 23
-  reach: 2
-  toPlayer: {x: 0, y: 0}
-  inRange: 0
-  maxHealth: 0
-  damage: 0
-  attackDelay: 0.8
-  pauseTime: 0.4
 --- !u!114 &4197461749516495366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,10 +169,8 @@ MonoBehaviour:
   player: {fileID: 0}
   moveSpeed: 23
   reach: 0
-  toPlayer: {x: 0, y: 0}
-  inRange: 0
-  maxHealth: 0
-  damage: 0
+  maxHealth: 1000
+  damage: 1
   attackDelay: 6
   pauseTime: 0.4
   BossBeam: {fileID: 8315495998408902865, guid: 0b88ea314c52fe941870dae7266bd65a, type: 3}
