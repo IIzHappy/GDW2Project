@@ -365,7 +365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3701055666040749363, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.284
       objectReference: {fileID: 0}
     - target: {fileID: 3701055666040749363, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
       propertyPath: m_LocalPosition.y
@@ -375,6 +375,14 @@ PrefabInstance:
       propertyPath: decals
       value: 
       objectReference: {fileID: 6003143102891085640}
+    - target: {fileID: 5285285619105121044, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
+      propertyPath: curProjectile
+      value: 
+      objectReference: {fileID: 4025758036303770734, guid: 71fbf6c7cbab0484fa7c06947837f5e0, type: 3}
+    - target: {fileID: 5285285619105121044, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
+      propertyPath: 'projectiles.Array.data[0]'
+      value: 
+      objectReference: {fileID: 4025758036303770734, guid: 71fbf6c7cbab0484fa7c06947837f5e0, type: 3}
     - target: {fileID: 6926388550701270172, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
       propertyPath: m_Name
       value: Player_Level3
