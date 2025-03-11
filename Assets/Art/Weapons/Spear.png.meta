@@ -103,12 +103,12 @@ TextureImporter:
       name: Spear_0
       rect:
         serializedVersion: 2
-        x: 56
-        y: 73
-        width: 204
-        height: 995
+        x: 45
+        y: 56
+        width: 995
+        height: 204
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5ae8e87c644f26f418b0b939238611fe
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Spear_0: 6108012597462862368
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

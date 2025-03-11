@@ -29,7 +29,8 @@ public class PlayerController : MonoBehaviour
 
     private int damageLevel = 0;
 
-    [SerializeField]GameObject weapon;
+    [SerializeField] GameObject weapon;
+    [SerializeField] GameObject decals;
     [SerializeField] List<GameObject> projectiles;
     public GameObject curProjectile;
     public Transform rotatePos;
@@ -65,16 +66,30 @@ public class PlayerController : MonoBehaviour
             Debug.Log("turn right");
             faceLeft = false;
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            weapon.transform.localScale = new Vector3(weapon.transform.localScale.x, -weapon.transform.localScale.y, weapon.transform.localScale.z);
-            weapon.transform.localPosition = new Vector3(weapon.transform.localPosition.x, -weapon.transform.localPosition.y, weapon.transform.localPosition.z);
+            if (decals !=  null)
+            {
+                decals.transform.localScale = new Vector3(-decals.transform.localScale.x, decals.transform.localScale.y, decals.transform.localScale.z);
+            }
+            if (weapon.tag == "WeaponFlip")
+            {
+                weapon.transform.localScale = new Vector3(weapon.transform.localScale.x, -weapon.transform.localScale.y, weapon.transform.localScale.z);
+                weapon.transform.localPosition = new Vector3(weapon.transform.localPosition.x, -weapon.transform.localPosition.y, weapon.transform.localPosition.z);
+            }
         }
         else if (Mathf.Abs(angle) > 90 && !faceLeft)
         {
             Debug.Log("turn left");
             faceLeft = true;
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            weapon.transform.localScale = new Vector3(weapon.transform.localScale.x, -weapon.transform.localScale.y, weapon.transform.localScale.z);
-            weapon.transform.localPosition = new Vector3(weapon.transform.localPosition.x, -weapon.transform.localPosition.y, weapon.transform.localPosition.z);
+            if (decals != null)
+            {
+                decals.transform.localScale = new Vector3(-decals.transform.localScale.x, decals.transform.localScale.y, decals.transform.localScale.z);
+            }
+            if (weapon.tag == "WeaponFlip")
+            {
+                weapon.transform.localScale = new Vector3(weapon.transform.localScale.x, -weapon.transform.localScale.y, weapon.transform.localScale.z);
+                weapon.transform.localPosition = new Vector3(weapon.transform.localPosition.x, -weapon.transform.localPosition.y, weapon.transform.localPosition.z);
+            }
         }
         if (attackTimer <= 0)
         {

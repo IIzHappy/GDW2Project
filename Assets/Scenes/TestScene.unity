@@ -266,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1489252022173303717, guid: 5268484c52cb5a641b879ee4e5483869, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: 1489252022173303717, guid: 5268484c52cb5a641b879ee4e5483869, type: 3}
       propertyPath: m_LocalPosition.z
@@ -537,6 +537,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4084881881517004685, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5285285619105121044, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
       propertyPath: UIScreen
       value: 
@@ -552,6 +556,14 @@ PrefabInstance:
     - target: {fileID: 6926388550701270172, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926388550701270172, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640569988138818722, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
+      propertyPath: m_TagString
+      value: WeaponFlip
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
