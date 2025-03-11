@@ -7,7 +7,9 @@ public class BossOneController : EnemyController
 {
     public GameObject BossBeam;
     public GameObject enemyM;
-    
+   
+
+   
     protected override void Attack()
     {
         Vector2 BeamPosition = transform.position;
@@ -22,6 +24,8 @@ public class BossOneController : EnemyController
         GameObject Beam = Instantiate(BossBeam);
         Beam.transform.position = BeamPosition;
         Beam.transform.parent = transform;
+        moveSpeed = 0f;
+        
 
 
     }

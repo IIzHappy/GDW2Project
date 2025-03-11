@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2585424713817216366}
   - component: {fileID: 8911026667660153582}
-  - component: {fileID: 2826951408534120391}
   - component: {fileID: 1605922198061238793}
   - component: {fileID: 8252973046090388914}
+  - component: {fileID: 3623684696103890070}
   m_Layer: 0
   m_Name: BeamSquare
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.04, y: -2.51, z: 0}
-  m_LocalScale: {x: 17.965807, y: 4.5990157, z: 1}
+  m_LocalScale: {x: 17.965807, y: 5.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,9 +78,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.3019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6156863}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -90,20 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2826951408534120391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8315495998408902865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cd2d30411925354bbf37ac876c2bcba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Timer: 0
-  playerPresent: 0
 --- !u!50 &1605922198061238793
 Rigidbody2D:
   serializedVersion: 5
@@ -177,3 +163,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3623684696103890070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315495998408902865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd2d30411925354bbf37ac876c2bcba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timer: 0
+  material: {fileID: 0}
+  playerPresent: 0
+  damage: 1
+  hasAttacked: 0

@@ -711,7 +711,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.4724002, y: 2.2414012, z: -0.07280036}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1595542014}
@@ -1474,7 +1474,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.5031446, g: 0.5031446, b: 0.5031446, a: 1}
   m_FlipX: 0
@@ -1687,7 +1687,7 @@ MonoBehaviour:
   maxHP: 5
   moveSpeed: 38
   upgradeSpeed: 2
-  baseAttackDelay: 0.1
+  baseAttackDelay: 10
   projectiles:
   - {fileID: 2743244988897241797, guid: aa20a41a77df2fc4ba147104f14648dd, type: 3}
   curProjectile: {fileID: 2743244988897241797, guid: aa20a41a77df2fc4ba147104f14648dd, type: 3}
@@ -1799,7 +1799,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1538042099154532911, guid: 18c57786f1dfa9143980ee23b26e14cc, type: 3}
   m_Color: {r: 1, g: 0.9931715, b: 0.76037735, a: 1}
   m_FlipX: 0
@@ -1857,10 +1857,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f16789c4f170443854a2bc484f8442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy1: {fileID: 6790453613484793021, guid: 68f2750a3ba477947bec0af332440d7a, type: 3}
-  enemy2: {fileID: 6790453613484793021, guid: ff1aada01e378e445acec9a324d9b971, type: 3}
-  enemy3: {fileID: 6790453613484793021, guid: 11f5baa25971927429c74456887bbccc, type: 3}
-  enemy4: {fileID: 6790453613484793021, guid: 48e62b7f22fd4894ea7023a5da2bf3ee, type: 3}
+  enemy1: {fileID: 5655816207760407807, guid: 31f3c2af9c5eefe41bacb7f7d8b364d1, type: 3}
+  enemy2: {fileID: 189536196262968610, guid: cda5a9f777409f742a554d66c874be14, type: 3}
+  enemy3: {fileID: 5063438183895218230, guid: 332d1b61d28e7344091965cc0a516e97, type: 3}
+  enemy4: {fileID: 6580358481514398257, guid: bc31188db9473e54fa26e9aee4c9ec9d, type: 3}
   boss1: {fileID: 6790453613484793021, guid: 5ca3c8dd6b500584eab29e4dab57365f, type: 3}
   spawnArea: {x: 10, y: 6}
   spawnTimer: 100
