@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d22b9ce0e5bc0994bb4a878a8a0ce472
+guid: faf47a6f3f512f64e90bf1494343bdda
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3240965276541314687
-    second: Pond Outline_0
+      213: 6108012597462862368
+    second: Spear_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pond Outline_0
+      name: Spear_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 24000
-        height: 13500
+        x: 56
+        y: 73
+        width: 204
+        height: 995
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f76ee956fb83afc20800000000000000
-      internalID: 3240965276541314687
+      spriteID: 02a8263881504c450800000000000000
+      internalID: 6108012597462862368
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Pond Outline_0: 3240965276541314687
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
