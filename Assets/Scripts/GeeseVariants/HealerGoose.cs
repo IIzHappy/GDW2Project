@@ -10,6 +10,7 @@ public class HealerGoose : EnemyController
         {
             Attack();
             hasAttacked = true;
+            attackTimer = attackDelay;
         }
     }
 
