@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
         if (Random.Range(0, 10) >= armourLevel)
         {
             curHP = Mathf.Clamp(curHP - damage, 0, maxHP);
-            //healthBar.fillAmount = (float)curHP / (float)maxHP;
+            healthBar.fillAmount = (float)curHP / (float)maxHP;
             if (curHP == 0)
             {
                 Time.timeScale = 0;
