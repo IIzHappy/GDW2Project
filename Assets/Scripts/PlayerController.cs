@@ -38,6 +38,10 @@ public class PlayerController : MonoBehaviour
 
     private bool faceLeft = true;
 
+    private bool dodge = false;
+    private float dodgeTime = 0.3f;
+    private float dodgeTimer = 0.3f;
+    private float dodgeCooldown = 3f;
 
     void Start()
     {
@@ -49,7 +53,25 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space) && dodgeCooldown < 0f && !dodge)
+        {
+            dodge = true;
+            rb.AddForce(move * 15);
+        }
+        if (dodge)
+        {
+            dodgeTimer -= Time.deltaTime;
+            if (dodgeTimer < 0)
+            {
+                dodge = false;
+                dodgeTimer = dodgeTime;
+                dodgeCooldown = 3f;
+            }
+        }
+        else
+        {
+            dodgeCooldown -= Time.deltaTime;
+        }
     }
 
     void FixedUpdate()
@@ -104,7 +126,7 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (Random.Range(0, 10) >= armourLevel)
+        if (Random.Range(0, 10) >= armourLevel && !dodge)
         {
             curHP = Mathf.Clamp(curHP - damage, 0, maxHP);
             healthBar.fillAmount = (float)curHP / (float)maxHP;
