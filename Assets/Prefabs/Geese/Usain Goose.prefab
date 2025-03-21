@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1269332864410520686}
   - component: {fileID: 9086585138506436147}
   - component: {fileID: 1727563093916872598}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Usain Goose
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,6 +189,10 @@ PrefabInstance:
     - target: {fileID: 6043977828741563908, guid: 400cebca417e9724cafa8d1361f9690c, type: 3}
       propertyPath: m_Name
       value: Water Overlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 6043977828741563908, guid: 400cebca417e9724cafa8d1361f9690c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8059815353562065230, guid: 400cebca417e9724cafa8d1361f9690c, type: 3}
       propertyPath: m_LocalPosition.x
