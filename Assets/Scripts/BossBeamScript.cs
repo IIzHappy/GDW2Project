@@ -10,6 +10,7 @@ public class BossBeamScript : MonoBehaviour
     GameObject player;
     public int damage;
     public bool hasAttacked = false;
+    public Sprite beamSprite;
 
    
     private void Awake()
@@ -32,7 +33,10 @@ public class BossBeamScript : MonoBehaviour
 
         }
         if (Timer > 1f && playerPresent && hasAttacked == false) {
-            gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
+            gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
+           // gameObject.GetComponent<SpriteRenderer>().sprite = beamSprite;
+            transform.GetChild(0).gameObject.SetActive(true);
+           // gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
             if (player.gameObject.tag == "Player")
             {
                 player.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
