@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8236747965402568885}
+  drop: {fileID: 7145896400516814513, guid: 034bc47a97c31c1458c44630d9da3cda, type: 3}
   player: {fileID: 0}
   moveSpeed: 30
   reach: 2.2

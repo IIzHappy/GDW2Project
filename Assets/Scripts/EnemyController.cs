@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] GameObject drop;
     public GameObject player;
     private SpriteRenderer sr;
     private bool faceLeft = true;
@@ -113,6 +114,10 @@ public class EnemyController : MonoBehaviour
         if (health <= 0)
         {
             Destroy(this.gameObject);
+            if (Random.Range(0, 10) == 0)
+            {
+                Instantiate(drop, transform.position, Quaternion.Euler(0, 0, 0));
+            }
         }
     }
     public virtual void Heal(int healing)

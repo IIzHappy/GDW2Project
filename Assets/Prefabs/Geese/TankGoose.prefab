@@ -167,13 +167,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2004545940473224075}
+  drop: {fileID: 7145896400516814513, guid: 034bc47a97c31c1458c44630d9da3cda, type: 3}
   player: {fileID: 0}
   moveSpeed: 12
   reach: 2.4
   maxHealth: 15
   damage: 1
   attackDelay: 1.5
-  attackTimer: 0
   pauseTime: 0.5
 --- !u!1001 &4412313368608609704
 PrefabInstance:

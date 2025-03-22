@@ -9,6 +9,7 @@ TagManager:
   - EnemyProjectile
   - Weapon
   - WeaponFlip
+  - PickUp
   layers:
   - Default
   - TransparentFX

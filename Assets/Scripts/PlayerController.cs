@@ -181,4 +181,17 @@ public class PlayerController : MonoBehaviour
         upgradeScreen.SetActive(false);
         Time.timeScale = 1;
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PickUp"))
+        {
+            curHP += 2;
+            if (curHP > maxHP)
+            {
+                curHP = maxHP;
+            }
+            Destroy(collision.gameObject);
+        }
+    }
 }
