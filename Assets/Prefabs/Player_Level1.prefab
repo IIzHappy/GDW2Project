@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 8375065995662261120}
   - component: {fileID: 2794201006860635130}
   - component: {fileID: 5285285619105121044}
+  - component: {fileID: 344518888977133477}
   m_Layer: 3
   m_Name: Player_Level1
   m_TagString: Player
@@ -247,6 +248,28 @@ MonoBehaviour:
   curProjectile: {fileID: 2743244988897241797, guid: aa20a41a77df2fc4ba147104f14648dd, type: 3}
   rotatePos: {fileID: 1586756669479595956}
   spawnPos: {fileID: 3701055666040749363}
+--- !u!95 &344518888977133477
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926388550701270172}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35c37c1504008f7448b7ff458d58a60a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7640569988138818722
 GameObject:
   m_ObjectHideFlags: 0
