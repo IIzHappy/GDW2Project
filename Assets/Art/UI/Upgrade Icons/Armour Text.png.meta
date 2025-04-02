@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Armour Text_0: -6832194563066149561
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

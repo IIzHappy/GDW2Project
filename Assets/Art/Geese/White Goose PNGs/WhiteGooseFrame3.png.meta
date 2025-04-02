@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WhiteGooseFrame3_0: 4116930242045998680
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

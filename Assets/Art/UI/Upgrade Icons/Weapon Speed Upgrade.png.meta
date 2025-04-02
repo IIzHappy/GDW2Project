@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Weapon Speed Upgrade_0: -8907343302670824983
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

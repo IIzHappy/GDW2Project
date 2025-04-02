@@ -443,6 +443,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1087742654}
+    - target: {fileID: 1956315923918511818, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956315923918511818, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6832194563066149561, guid: 7fa9e619c8bcfa94fa3253c2caf4bd04, type: 3}
+    - target: {fileID: 2150980420338225328, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2150980420338225328, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7985630505499984308, guid: 227803e1e813d0c42aa24e18a5ecb1b1, type: 3}
     - target: {fileID: 3054956338668997737, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -487,6 +503,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1087742654}
+    - target: {fileID: 4585459188833761913, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585459188833761913, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2346265896632423027, guid: e2cfb65ea1af6d748bf1ed6ef03b2043, type: 3}
     - target: {fileID: 5716815348845260345, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -595,8 +619,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8119101033020098169, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119101033020098169, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3504282670768091109, guid: 70420b3aa886b6d44a5d1ac3d27f37db, type: 3}
+    - target: {fileID: 8252975805857432744, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252975805857432744, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1354396745860727633, guid: 9d3c7f484afdc2647a52d26cec6ef8da, type: 3}
+    - target: {fileID: 8264061695804821675, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+      propertyPath: m_Name
+      value: Health Bar
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7070655227405789279, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+    - {fileID: 5559696030448010939, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+    - {fileID: 783227976663303498, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+    - {fileID: 3451820954467669781, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+    - {fileID: 6125221849644028085, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
