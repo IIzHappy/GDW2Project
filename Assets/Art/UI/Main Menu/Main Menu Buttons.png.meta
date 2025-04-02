@@ -109,10 +109,10 @@ TextureImporter:
       name: Main Menu Buttons_0
       rect:
         serializedVersion: 2
-        x: 450
-        y: 108
-        width: 1337
-        height: 623
+        x: 449
+        y: 106
+        width: 1341
+        height: 627
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +131,10 @@ TextureImporter:
       name: Main Menu Buttons_1
       rect:
         serializedVersion: 2
-        x: 2153
-        y: 93
-        width: 1340
-        height: 638
+        x: 2150
+        y: 91
+        width: 1345
+        height: 642
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: Main Menu Buttons_2
       rect:
         serializedVersion: 2
-        x: 3865
-        y: 93
-        width: 1340
-        height: 638
+        x: 3863
+        y: 91
+        width: 1344
+        height: 642
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c426eb4b2d9d1de4eaf0ffbf3cda9205
     internalID: 0
     vertices: []
     indices: 
@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Main Menu Buttons_0: -3929774282953249155
+      Main Menu Buttons_1: -2566404002895614063
+      Main Menu Buttons_2: 6915001779886210215
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
