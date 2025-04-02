@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 8082ebcd24441d843928362729de5b7a
   - enabled: 1
-    path: Assets/Scenes/TestScene.unity
-    guid: 0f034dc69a2a58d49bcec5a683e0de4d
+    path: Assets/Scenes/KaiSpawnerTesting.unity
+    guid: 9c219e6f9a2add84b879dab286f218e8
   - enabled: 0
     path: Assets/Scenes/Level2.unity
     guid: 695a203b8fbe8804db204907ca2b34fd

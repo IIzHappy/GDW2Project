@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: MainMenu
-  startGame: TestScene
+  startGame: KaiSpawnerTesting
   credits: 
 --- !u!4 &1007217450
 Transform:
