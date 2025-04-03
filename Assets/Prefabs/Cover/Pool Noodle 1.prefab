@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 740967258962509217}
   - component: {fileID: 645913479705525489}
   - component: {fileID: 8890414798679367507}
+  - component: {fileID: 7432286851530130774}
   m_Layer: 0
   m_Name: Pool Noodle 1
   m_TagString: Untagged
@@ -110,3 +111,72 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!68 &7432286851530130774
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300339033744570211}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.00063470006, y: 0.58827865}
+  - {x: -0.5001147, y: 0.5552894}
+  - {x: -1.5969069, y: 0.30398196}
+  - {x: -2.4608319, y: -0.05918715}
+  - {x: -2.9360085, y: -0.40671518}
+  - {x: -3.0730953, y: -0.52801716}
+  - {x: -3.0792782, y: -0.6716252}
+  - {x: -2.969833, y: -0.70809066}
+  - {x: -2.7436304, y: -0.60662454}
+  - {x: -2.3489177, y: -0.25525218}
+  - {x: -1.657745, y: 0.04822561}
+  - {x: -0.8070202, y: 0.32595593}
+  - {x: 0.048483133, y: 0.41337818}
+  - {x: 1.0078638, y: 0.36752126}
+  - {x: 1.8631632, y: 0.103555396}
+  - {x: 2.6511517, y: -0.3394587}
+  - {x: 2.8985255, y: -0.47053903}
+  - {x: 3.0371242, y: -0.4799997}
+  - {x: 3.0930405, y: -0.44404075}
+  - {x: 3.1586425, y: -0.37474003}
+  - {x: 3.0901859, y: -0.31962183}
+  - {x: 3.0032804, y: -0.2686875}
+  - {x: 2.6881616, y: -0.0998905}
+  - {x: 2.365924, y: 0.062148467}
+  - {x: 1.9056629, y: 0.26671413}
+  - {x: 1.062912, y: 0.5232081}
+  - {x: 0.45558965, y: 0.57649827}
+  - {x: 0.0005981121, y: 0.5882609}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

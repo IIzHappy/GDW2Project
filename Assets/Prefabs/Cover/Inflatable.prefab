@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6368130870846714283}
   - component: {fileID: 5943909976746640613}
   - component: {fileID: 314046501870868428}
+  - component: {fileID: 7459048966787187165}
   m_Layer: 0
   m_Name: Inflatable
   m_TagString: Untagged
@@ -110,3 +111,59 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!68 &7459048966787187165
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362648175396312494}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.00000054783595, y: 0.6196519}
+  - {x: -1.2217442, y: 0.55125284}
+  - {x: -1.9594058, y: 0.34491956}
+  - {x: -2.3507318, y: -0.110899955}
+  - {x: -2.1213539, y: -0.6390166}
+  - {x: -1.5324177, y: -1.0220532}
+  - {x: 0.0518984, y: -1.1460084}
+  - {x: 1.6325679, y: -0.97691417}
+  - {x: 2.2228038, y: -0.53385675}
+  - {x: 2.352583, y: -0.060617924}
+  - {x: 2.0332458, y: 0.19462158}
+  - {x: 1.630388, y: 0.40506053}
+  - {x: 1.0338247, y: 0.5545888}
+  - {x: 0.5323794, y: 0.5889535}
+  - {x: -0.00000012360397, y: 0.6196518}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
