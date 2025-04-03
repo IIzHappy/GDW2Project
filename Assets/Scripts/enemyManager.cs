@@ -298,7 +298,7 @@ public class enemyManager : MonoBehaviour
             waveChange = true;
             if (waveChange == true && enemyManagerGO.transform.childCount == 0)
             {
-                spawnTimer = spawnTimer +0f;
+                spawnTimer = spawnTimer +2f;
                 waveChange = false;
                 universalTimer = 0f;
                 waveNum++;
@@ -333,7 +333,7 @@ public class enemyManager : MonoBehaviour
             waveChange = true;
             if (waveChange == true && enemyManagerGO.transform.childCount == 0)
             {
-                spawnTimer = spawnTimer + 1.1f;
+                spawnTimer = spawnTimer + 0f;
                 waveChange = false;
                 universalTimer = 0f;
                 waveNum++;
