@@ -8582,13 +8582,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 400cebca417e9724cafa8d1361f9690c, type: 3}
---- !u!4 &1908142129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8059815353562065230, guid: 400cebca417e9724cafa8d1361f9690c, type: 3}
   m_PrefabInstance: {fileID: 1908142128}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
---- !u!1001 &1919744276
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9289,8 +9286,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
-=======
->>>>>>> Stashed changes
 --- !u!212 &98763467072611275
 SpriteRenderer:
   m_ObjectHideFlags: 0
