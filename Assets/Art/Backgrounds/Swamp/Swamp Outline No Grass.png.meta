@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Swamp Outline No Grass_0: 8066571696791094726
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Small Island No Grass_0: -2854273297823783003
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

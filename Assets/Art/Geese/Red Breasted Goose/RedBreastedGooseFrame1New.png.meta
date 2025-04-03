@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RedBreastedGooseFrame1New_0: -6171426476979944197
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

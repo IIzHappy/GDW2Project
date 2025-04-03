@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CanadianGooseFrame5_0: 3699406157866719633
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

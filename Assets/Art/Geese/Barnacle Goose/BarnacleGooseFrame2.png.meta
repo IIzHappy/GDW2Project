@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BarnacleGooseFrame2_0: 8335483465129193877
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

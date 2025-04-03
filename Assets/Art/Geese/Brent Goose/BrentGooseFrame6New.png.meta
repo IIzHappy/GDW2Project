@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BrentGooseFrame6New_0: -5813648551744006016
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

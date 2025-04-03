@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RossGooseFrame3New_0: 8919730808743724528
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

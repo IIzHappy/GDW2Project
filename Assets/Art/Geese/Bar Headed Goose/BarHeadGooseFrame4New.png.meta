@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BarHeadGooseFrame4New_0: -8240573329932005222
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
