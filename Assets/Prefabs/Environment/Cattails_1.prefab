@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8224323745018542366}
   - component: {fileID: 8175760639162569481}
   - component: {fileID: 1857485817452787363}
+  - component: {fileID: 3978560465710181782}
   m_Layer: 0
   m_Name: Cattails_1
   m_TagString: Untagged
@@ -77,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1526165505576963474, guid: e7cdde23199760744ac69103d9ddd629, type: 3}
+  m_Sprite: {fileID: -832702255184329972, guid: 6127ddf8b57e86f48ad3a82c49ed3ec4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.68, y: 10.47}
+  m_Size: {x: 5.98, y: 10.46}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -126,11 +127,33 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.68, y: 10.47}
-    newSize: {x: 4.68, y: 10.47}
+    oldSize: {x: 5.98, y: 10.46}
+    newSize: {x: 5.98, y: 10.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 1.784833, y: 2.6834555}
   m_EdgeRadius: 0
+--- !u!95 &3978560465710181782
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5764978886469760570}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ab75da1ba26c4bb47a582d608ef48dcf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

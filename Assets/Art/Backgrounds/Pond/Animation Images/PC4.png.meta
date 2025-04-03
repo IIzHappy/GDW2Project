@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: e7cdde23199760744ac69103d9ddd629
+guid: 870adc11cdf55f54da64312ee17298ba
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1419349382128094535
-    second: Cattails_0
+      213: 2115823208436846878
+    second: PC4_0
   - first:
-      213: -1526165505576963474
-    second: Cattails_1
+      213: -4714578280373234164
+    second: PC4_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,30 +99,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cattails_0
+      name: PC4_0
       rect:
         serializedVersion: 2
-        x: 158
-        y: 348
-        width: 550
-        height: 1047
+        x: 108
+        y: 350
+        width: 599
+        height: 1032
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b2b51ac1457d4ce0800000000000000
-      internalID: -1419349382128094535
+      spriteID: e11d76a7ff9ec5d10800000000000000
+      internalID: 2115823208436846878
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cattails_1
+      name: PC4_1
       rect:
         serializedVersion: 2
-        x: 998
-        y: 364
-        width: 468
-        height: 1047
+        x: 1090
+        y: 350
+        width: 599
+        height: 1032
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e6271a30f88f1dae0800000000000000
-      internalID: -1526165505576963474
+      spriteID: c06d49c6804729eb0800000000000000
+      internalID: -4714578280373234164
       vertices: []
       indices: 
       edges: []
@@ -172,9 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Cattails_0: -1419349382128094535
-      Cattails_1: -1526165505576963474
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

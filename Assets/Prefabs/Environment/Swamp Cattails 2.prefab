@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8224323745018542366}
   - component: {fileID: 8175760639162569481}
   - component: {fileID: 1857485817452787363}
+  - component: {fileID: 6124273459176890994}
   m_Layer: 0
   m_Name: Swamp Cattails 2
   m_TagString: Untagged
@@ -134,3 +135,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.784833, y: 2.6834555}
   m_EdgeRadius: 0
+--- !u!95 &6124273459176890994
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5764978886469760570}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1825b9e2402fffc438f6f02e7bfdc147, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
