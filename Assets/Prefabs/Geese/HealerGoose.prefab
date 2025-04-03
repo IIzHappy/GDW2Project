@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 773148891777361521}
   - component: {fileID: 6772857184996959129}
   - component: {fileID: 5464398792602643813}
+  - component: {fileID: 2515916902670676170}
   m_Layer: 6
   m_Name: HealerGoose
   m_TagString: Enemy
@@ -214,6 +215,28 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 10
+--- !u!95 &2515916902670676170
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6580358481514398257}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3da0900c7ec73724b9f0168e9a657056, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &2218931909866079937
 PrefabInstance:
   m_ObjectHideFlags: 0

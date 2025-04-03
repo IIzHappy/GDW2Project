@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7619171961259397180}
   - component: {fileID: 2549906118676038548}
   - component: {fileID: 5950104340221690945}
+  - component: {fileID: 3249765234623444397}
   m_Layer: 6
   m_Name: RangedGoose
   m_TagString: Enemy
@@ -176,6 +177,28 @@ MonoBehaviour:
   attackDelay: 1.5
   pauseTime: 0.2
   bulletPrefab: {fileID: 8194197411572369089, guid: 2d385c5c85a2b5549b002c40dbcbfe5c, type: 3}
+--- !u!95 &3249765234623444397
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189536196262968610}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ccd2765df4f3ae4d8219d6e36d9bee7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5803569405869821558
 PrefabInstance:
   m_ObjectHideFlags: 0

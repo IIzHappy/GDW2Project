@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6435867820513951217}
   - component: {fileID: 8957570505183239822}
   - component: {fileID: 1487359873825024252}
+  - component: {fileID: 2341529888542297474}
   m_Layer: 6
   m_Name: Boss Goose 2
   m_TagString: Enemy
@@ -177,6 +178,28 @@ MonoBehaviour:
   pauseTime: 0.4
   bulletPrefab: {fileID: 127565487151566155, guid: 9aa143fce18727b48a3574f75eccada4, type: 3}
   enemyM: {fileID: 0}
+--- !u!95 &2341529888542297474
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9151147141057941124}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f09b8ee5d4ee46d48b1fe9e4a527ff2f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &3403110939043574970
 PrefabInstance:
   m_ObjectHideFlags: 0

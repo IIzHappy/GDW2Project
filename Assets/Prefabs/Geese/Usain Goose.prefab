@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1269332864410520686}
   - component: {fileID: 9086585138506436147}
   - component: {fileID: 1727563093916872598}
+  - component: {fileID: 5549847257934312593}
   m_Layer: 6
   m_Name: Usain Goose
   m_TagString: Enemy
@@ -175,6 +176,28 @@ MonoBehaviour:
   damage: 1
   attackDelay: 0.8
   pauseTime: 0.4
+--- !u!95 &5549847257934312593
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9168355971177491400}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1d99411c76c952e478c148f99a215d4a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &3855476806575948719
 PrefabInstance:
   m_ObjectHideFlags: 0

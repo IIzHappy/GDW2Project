@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6852199255372223371}
   - component: {fileID: 2004545940473224075}
   - component: {fileID: 7897928798736168534}
+  - component: {fileID: 2078783970844508792}
   m_Layer: 6
   m_Name: TankGoose
   m_TagString: Enemy
@@ -175,6 +176,28 @@ MonoBehaviour:
   damage: 1
   attackDelay: 1.5
   pauseTime: 0.5
+--- !u!95 &2078783970844508792
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5063438183895218230}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 54afa4a89a5fd19418bd65ad8f08c0a4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &4412313368608609704
 PrefabInstance:
   m_ObjectHideFlags: 0
