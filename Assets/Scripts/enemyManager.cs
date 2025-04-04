@@ -12,6 +12,7 @@ public class enemyManager : MonoBehaviour
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
     [SerializeField] GameObject enemyManagerGO;
+    [SerializeField] GameObject winScreen;
    public float timer;
     public float timer2;
    public float waveNum = 1f;
@@ -78,6 +79,11 @@ public class enemyManager : MonoBehaviour
         if (Boss == null && Boss2 == null)
         {
             bossKilled = true;
+        }
+        if (waveNum == 11)
+        {
+            winScreen.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
