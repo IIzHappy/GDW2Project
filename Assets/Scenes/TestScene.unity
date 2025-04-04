@@ -241,6 +241,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38914749e762b924eaa0a85d75aa954c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1087742657 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 344518888977133477, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
+  m_PrefabInstance: {fileID: 3965853767456020427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1164351300
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,16 +280,21 @@ MonoBehaviour:
   enemy3: {fileID: 0}
   enemy4: {fileID: 0}
   boss1: {fileID: 0}
+  boss2: {fileID: 0}
   spawnArea: {x: 10, y: 6}
   spawnTimer: 1
   enemyManagerGO: {fileID: 1164351300}
+  winScreen: {fileID: 1750624665}
   timer: 0
   timer2: 0
   waveNum: 1
   universalTimer: 0
   Player: {fileID: 1087742653}
+  Boss: {fileID: 0}
+  Boss2: {fileID: 0}
   waveChange: 0
   bossKilled: 0
+  lvlNum: 0
 --- !u!4 &1164351302
 Transform:
   m_ObjectHideFlags: 0
@@ -303,6 +313,11 @@ Transform:
 --- !u!1 &1538142812 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3054956338668997737, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+  m_PrefabInstance: {fileID: 5249085004122412154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1750624665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 22307499858655691, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
   m_PrefabInstance: {fileID: 5249085004122412154}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1832904647 stripped
@@ -389,6 +404,10 @@ PrefabInstance:
       propertyPath: UIScreen
       value: 
       objectReference: {fileID: 1538142812}
+    - target: {fileID: 5285285619105121044, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1087742657}
     - target: {fileID: 5285285619105121044, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
       propertyPath: healthBar
       value: 

@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     public int maxHP;
     public int curHP;
+    private bool dead;
+    private float deathDelay = 0.8333f;
     private int armourLevel = 0;
 
     public float moveSpeed;
@@ -81,6 +83,15 @@ public class PlayerController : MonoBehaviour
         {
             dodgeCooldown -= Time.deltaTime;
             dashCooldown.fillAmount = dodgeCooldown/3f;
+        }
+
+        if (dead)
+        {
+            deathDelay -= Time.deltaTime;
+            if (deathDelay <= 0)
+            {
+                Die();
+            }
         }
     }
 
@@ -144,10 +155,15 @@ public class PlayerController : MonoBehaviour
             if (curHP == 0)
             {
                 animator.SetBool("Dead", true);
-                Time.timeScale = 0;
-                LoseScreen.SetActive(true);
+                dead = true;
             }
         }
+    }
+
+    public void Die()
+    {
+        Time.timeScale = 0;
+        LoseScreen.SetActive(true);
     }
 
     public void ResetHP()
