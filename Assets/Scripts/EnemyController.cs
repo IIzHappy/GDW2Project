@@ -26,6 +26,8 @@ public class EnemyController : MonoBehaviour
     public float pauseTime; //Time before enemy starts chasing player after pausing
    protected float pauseTimer = 0;
 
+    public  AudioClip quack;
+
 
     void Awake()
     {
@@ -111,6 +113,7 @@ public class EnemyController : MonoBehaviour
     public virtual void TakeDamage(int dmg)
     {
         health -= dmg;
+        PlayDamageSound();
         if (health <= 0)
         {
             Destroy(this.gameObject);
@@ -125,7 +128,7 @@ public class EnemyController : MonoBehaviour
         health = Mathf.Clamp(health + healing, health, maxHealth);
     }
 
-    public virtual void PlayDamageSound()
+    public void PlayDamageSound()
     {
         AudioSource.PlayClipAtPoint(quack, gameObject.transform.position);
     }
