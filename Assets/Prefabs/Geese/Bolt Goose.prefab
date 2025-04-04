@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1727563093916872598}
   - component: {fileID: 5549847257934312593}
   m_Layer: 6
-  m_Name: Usain Goose
+  m_Name: Bolt Goose
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

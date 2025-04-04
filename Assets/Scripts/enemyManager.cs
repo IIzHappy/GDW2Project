@@ -25,10 +25,11 @@ public class enemyManager : MonoBehaviour
     private bool bossSpawned = false;
     public bool bossKilled = false;
     public int lvlNum;
-
+    public AudioClip levelStart;
     void Start()
     {
         pc = Player.GetComponent<PlayerController>();
+        AudioSource.PlayClipAtPoint(levelStart, gameObject.transform.position);
     }
 
     private void Update()
