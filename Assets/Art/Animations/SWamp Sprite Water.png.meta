@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SWamp Sprite Water_0: -8686399145478652987
+      SWamp Sprite Water_1: -8444657258502558671
+      SWamp Sprite Water_2: 135330695294636524
+      SWamp Sprite Water_3: 2500913870820908792
+      SWamp Sprite Water_4: -7888720382568289062
+      SWamp Sprite Water_5: 8202375239001524580
+      SWamp Sprite Water_6: 6506724404949181251
+      SWamp Sprite Water_7: 5832132350589517696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
