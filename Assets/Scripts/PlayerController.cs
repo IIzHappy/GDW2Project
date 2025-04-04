@@ -57,6 +57,11 @@ public class PlayerController : MonoBehaviour
     public AudioClip WeaponThrow;
     public AudioClip UpgradeOpenSound;
 
+    void Awake()
+    {
+        Time.timeScale = 1;
+    }
+
     void Start()
     {
         attackDelay = baseAttackDelay;
@@ -228,6 +233,7 @@ public class PlayerController : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
     }
 
     public void QuitGame()
