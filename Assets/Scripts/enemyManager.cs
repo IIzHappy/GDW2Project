@@ -1,5 +1,6 @@
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class enemyManager : MonoBehaviour
 {
@@ -83,8 +84,15 @@ public class enemyManager : MonoBehaviour
         }
         if (waveNum == 11)
         {
-            winScreen.SetActive(true);
-            Time.timeScale = 0;
+            if (lvlNum == 3)
+            {
+                winScreen.SetActive(true);
+                Time.timeScale = 0;
+            }
+            else
+            {
+                SceneManager.LoadScene(lvlNum + 1);
+            }
         }
     }
 
