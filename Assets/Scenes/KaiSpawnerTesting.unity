@@ -4232,6 +4232,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42bb357b42b3e7f429ea29cb601d53f5, type: 3}
+--- !u!1 &602200033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5783008597470655766, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+  m_PrefabInstance: {fileID: 718281233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &609886142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 49798826160958490, guid: cfb928332adac7b44ac9d9aebc5ea955, type: 3}
@@ -7354,6 +7359,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 49798826160958490, guid: cfb928332adac7b44ac9d9aebc5ea955, type: 3}
   m_PrefabInstance: {fileID: 2019434154}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1481158121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3054956338668997737, guid: f56841ecb75d73542af8c7d95f1843b0, type: 3}
+  m_PrefabInstance: {fileID: 718281233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1487485227 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1654284272657374295, guid: f5cd8ff142e85bb4db7721915f13a339, type: 3}
@@ -9841,8 +9851,8 @@ MonoBehaviour:
   healthBar: {fileID: 718281237}
   shootCooldown: {fileID: 718281235}
   dashCooldown: {fileID: 718281236}
-  upgradeScreen: {fileID: 0}
-  UIScreen: {fileID: 0}
+  upgradeScreen: {fileID: 602200033}
+  UIScreen: {fileID: 1481158121}
   LoseScreen: {fileID: 718281238}
   maxHP: 5
   curHP: 0
@@ -9886,7 +9896,7 @@ GameObject:
   - component: {fileID: 2583690001170273489}
   - component: {fileID: 5495790242339347519}
   - component: {fileID: 8153720368132711596}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
