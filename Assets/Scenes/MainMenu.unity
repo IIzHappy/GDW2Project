@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenu: MainMenu
   startGame: KaiSpawnerTesting
-  credits: 
+  credits: Credits
 --- !u!4 &1007217450
 Transform:
   m_ObjectHideFlags: 0

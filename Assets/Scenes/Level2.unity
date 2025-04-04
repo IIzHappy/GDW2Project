@@ -1349,7 +1349,8 @@ PrefabInstance:
       value: EndUpgrade
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3047411346916568215, guid: 59ff341e71be8a547834a6cec95a30d7, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4219116992818346350, guid: 59ff341e71be8a547834a6cec95a30d7, type: 3}
       insertIndex: 4
