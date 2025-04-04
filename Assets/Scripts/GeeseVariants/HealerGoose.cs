@@ -4,6 +4,7 @@ public class HealerGoose : EnemyController
 {
     public GameObject heal;
     public bool changed = false;
+    public AudioClip enemyHealSound;
 
     private void Update()
     {
@@ -43,6 +44,7 @@ public class HealerGoose : EnemyController
     protected override void Attack()
     {
         Instantiate(heal, gameObject.transform);
+        AudioSource.PlayClipAtPoint(enemyHealSound, gameObject.transform.position);
         
     }
     public override void Heal(int healing)

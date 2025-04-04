@@ -27,6 +27,7 @@ public class EnemyController : MonoBehaviour
    protected float pauseTimer = 0;
 
     public  AudioClip quack;
+    public AudioClip death;
 
 
     void Awake()
@@ -116,6 +117,7 @@ public class EnemyController : MonoBehaviour
         PlayDamageSound();
         if (health <= 0)
         {
+            AudioSource.PlayClipAtPoint(death, gameObject.transform.position);
             Destroy(this.gameObject);
             if (Random.Range(0, 10) == 0)
             {

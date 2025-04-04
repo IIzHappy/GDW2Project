@@ -11,8 +11,8 @@ public class BossBeamScript : MonoBehaviour
     public int damage;
     public bool hasAttacked = false;
     public Sprite beamSprite;
+    public AudioSource AudioSource;
 
-   
     private void Awake()
     {
         gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
@@ -29,6 +29,7 @@ public class BossBeamScript : MonoBehaviour
         if (Timer > 1.5f)
         {
             GetComponentInParent<BossOneController>().moveSpeed = 23f;
+            AudioSource.Stop();
             Destroy(gameObject);
 
         }
@@ -36,6 +37,7 @@ public class BossBeamScript : MonoBehaviour
             gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
            // gameObject.GetComponent<SpriteRenderer>().sprite = beamSprite;
             transform.GetChild(0).gameObject.SetActive(true);
+            AudioSource.Play();
            // gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
             if (player.gameObject.tag == "Player")
             {

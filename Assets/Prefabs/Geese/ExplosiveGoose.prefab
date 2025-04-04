@@ -175,7 +175,10 @@ MonoBehaviour:
   damage: 0
   attackDelay: 1.5
   pauseTime: 1.2
+  quack: {fileID: 8300000, guid: 18d55bf95553def4b8aec8d6cc31a296, type: 3}
+  death: {fileID: 8300000, guid: c87d3570d111fdf4f90944376343f163, type: 3}
   explosion: {fileID: 1616482112105861988, guid: 138484f7827df3448835685c98ef2cc0, type: 3}
+  explosionClip: {fileID: 8300000, guid: 74a11af8b91a2d14ca340fdce1175b80, type: 3}
 --- !u!95 &1106069159848274906
 Animator:
   serializedVersion: 7
