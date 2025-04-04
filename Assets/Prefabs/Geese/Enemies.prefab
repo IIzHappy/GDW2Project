@@ -49,6 +49,7 @@ MonoBehaviour:
   enemy3: {fileID: 5063438183895218230, guid: 332d1b61d28e7344091965cc0a516e97, type: 3}
   enemy4: {fileID: 6580358481514398257, guid: bc31188db9473e54fa26e9aee4c9ec9d, type: 3}
   boss1: {fileID: 6790453613484793021, guid: 5ca3c8dd6b500584eab29e4dab57365f, type: 3}
+  boss2: {fileID: 9151147141057941124, guid: 340467a8f9755d240a2889408382146c, type: 3}
   spawnArea: {x: 10, y: 6}
   spawnTimer: 1
   enemyManagerGO: {fileID: 2658150376527611460}
@@ -57,5 +58,7 @@ MonoBehaviour:
   waveNum: 1
   universalTimer: 0
   Player: {fileID: 0}
+  Boss: {fileID: 0}
   waveChange: 0
   bossKilled: 0
+  lvlNum: 0

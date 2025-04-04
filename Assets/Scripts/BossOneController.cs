@@ -47,7 +47,7 @@ public class BossOneController : EnemyController
 
     private void OnDestroy()
     {
-        enemyM.GetComponent<enemyManager>().bossKilled = true;
+       // enemyM.GetComponent<enemyManager>().bossKilled = true;
         Debug.Log("boss is dead");
     }
 }

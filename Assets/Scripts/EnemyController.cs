@@ -124,4 +124,9 @@ public class EnemyController : MonoBehaviour
     {
         health = Mathf.Clamp(health + healing, health, maxHealth);
     }
+
+    public virtual void PlayDamageSound()
+    {
+        AudioSource.PlayClipAtPoint(quack, gameObject.transform.position);
+    }
 }

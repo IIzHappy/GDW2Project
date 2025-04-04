@@ -4725,6 +4725,14 @@ PrefabInstance:
       propertyPath: enemy4
       value: 
       objectReference: {fileID: 5063438183895218230, guid: 332d1b61d28e7344091965cc0a516e97, type: 3}
+    - target: {fileID: 1548916191693955524, guid: 59ff341e71be8a547834a6cec95a30d7, type: 3}
+      propertyPath: lvlNum
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548916191693955524, guid: 59ff341e71be8a547834a6cec95a30d7, type: 3}
+      propertyPath: waveNum
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1911491094859000133, guid: 59ff341e71be8a547834a6cec95a30d7, type: 3}
       propertyPath: m_Name
       value: Level
@@ -5551,6 +5559,10 @@ PrefabInstance:
       propertyPath: upgradeScreen
       value: 
       objectReference: {fileID: 854355458}
+    - target: {fileID: 6805438489020765122, guid: 12967d6ef9ccfeb42a2e3b6e47fc700e, type: 3}
+      propertyPath: baseAttackDelay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8590516007578539082, guid: 12967d6ef9ccfeb42a2e3b6e47fc700e, type: 3}
       propertyPath: m_Name
       value: Player_Level3

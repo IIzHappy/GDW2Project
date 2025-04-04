@@ -8,6 +8,7 @@ public class enemyManager : MonoBehaviour
     [SerializeField] GameObject enemy3;
     [SerializeField] GameObject enemy4;
     [SerializeField] GameObject boss1;
+    [SerializeField] GameObject boss2;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
     [SerializeField] GameObject enemyManagerGO;
@@ -17,10 +18,12 @@ public class enemyManager : MonoBehaviour
     public float universalTimer;
     public GameObject Player;
     private PlayerController pc;
-    private GameObject Boss;
+    public GameObject Boss;
+    public GameObject Boss2;
     public bool waveChange = false;
     private bool bossSpawned = false;
     public bool bossKilled = false;
+    public int lvlNum;
 
     void Start()
     {
@@ -72,7 +75,7 @@ public class enemyManager : MonoBehaviour
         {
             waveTenSpawning();
         }
-        if (boss1 == null)
+        if (Boss == null && Boss2 == null)
         {
             bossKilled = true;
         }
@@ -313,7 +316,7 @@ public class enemyManager : MonoBehaviour
     {
         if (bossSpawned == false)
         {
-            SpawnBossOne();
+            SpawnBosses();
             bossSpawned = true;
         }
         if (timer < 0f && waveChange == false)
@@ -415,6 +418,41 @@ public class enemyManager : MonoBehaviour
         spawnedEnemy.transform.parent = transform;
         Boss.GetComponent<BossOneController>().enemyM = gameObject;
         Boss.GetComponent<BossOneController>().player = Player;
+    }
+
+    private void SpawnBossTwo()
+    {
+        Vector3 position = GenerateSpawnPosition();
+
+
+
+        position += Player.transform.position;
+        GameObject spawnedEnemy = Instantiate(boss2);
+        Boss2 = spawnedEnemy;
+        spawnedEnemy.transform.position = position;
+        spawnedEnemy.GetComponent<EnemyController>().player = Player;
+        spawnedEnemy.transform.parent = transform;
+        Boss2.GetComponent<BossTwoController>().enemyM = gameObject;
+        Boss2.GetComponent<BossTwoController>().player = Player;
+    }
+
+    private void SpawnBosses()
+    {
+        if (lvlNum == 1)
+        {
+            SpawnBossOne();
+        }
+
+        if(lvlNum == 2)
+        {
+            SpawnBossTwo();
+        }
+
+        if(lvlNum == 3)
+        {
+            SpawnBossOne();
+            SpawnBossTwo();
+        }
     }
 
     private Vector3 GenerateSpawnPosition()
