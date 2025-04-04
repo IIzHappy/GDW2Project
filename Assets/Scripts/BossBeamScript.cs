@@ -1,11 +1,9 @@
-using System.Security.Cryptography;
-using UnityEditor.Build;
 using UnityEngine;
 
 public class BossBeamScript : MonoBehaviour
 {
     public float Timer;
-   public Material material;
+    public Material material;
     public bool playerPresent = false;
     GameObject player;
     public int damage;
