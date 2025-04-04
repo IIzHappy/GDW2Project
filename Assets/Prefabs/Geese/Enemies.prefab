@@ -53,12 +53,15 @@ MonoBehaviour:
   spawnArea: {x: 10, y: 6}
   spawnTimer: 1
   enemyManagerGO: {fileID: 2658150376527611460}
+  winScreen: {fileID: 0}
   timer: 0
   timer2: 0
   waveNum: 1
   universalTimer: 0
   Player: {fileID: 0}
   Boss: {fileID: 0}
+  Boss2: {fileID: 0}
   waveChange: 0
   bossKilled: 0
   lvlNum: 0
+  levelStart: {fileID: 8300000, guid: a8c78994ef96e2f4997309f889c1a65f, type: 3}

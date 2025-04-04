@@ -388,6 +388,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6003143102891085640}
     - target: {fileID: 5285285619105121044, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
+      propertyPath: PlayerDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: ea8718d0a71de6249a70df1e17ab2e68, type: 3}
+    - target: {fileID: 5285285619105121044, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
+      propertyPath: WeaponThrow
+      value: 
+      objectReference: {fileID: 8300000, guid: 94a66c7f3ab339e499107e391bb95895, type: 3}
+    - target: {fileID: 5285285619105121044, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
+      propertyPath: PlayerDamage
+      value: 
+      objectReference: {fileID: 8300000, guid: b8281da84d7afe54e95185bbe78b2164, type: 3}
+    - target: {fileID: 5285285619105121044, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
       propertyPath: curProjectile
       value: 
       objectReference: {fileID: 4025758036303770734, guid: 71fbf6c7cbab0484fa7c06947837f5e0, type: 3}

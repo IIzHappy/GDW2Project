@@ -52,6 +52,11 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+    public AudioClip PlayerDeath;
+    public AudioClip PlayerDamage;
+    public AudioClip WeaponThrow;
+    //public AudioClip WeaponGunSound;
+
     void Start()
     {
         attackDelay = baseAttackDelay;
@@ -137,6 +142,7 @@ public class PlayerController : MonoBehaviour
         if (attackTimer <= 0)
         {
             Debug.Log("player attack");
+            AudioSource.PlayClipAtPoint(WeaponThrow, gameObject.transform.position);
             GameObject temp = Instantiate(curProjectile, spawnPos.position, Quaternion.AngleAxis(angle, Vector3.forward));
             temp.GetComponent<ProjectileController>().direction = mouseAim.normalized;
             temp.GetComponent<ProjectileController>().UpgradeDamage(2 * damageLevel);
@@ -150,11 +156,13 @@ public class PlayerController : MonoBehaviour
     {
         if (Random.Range(0, 10) >= armourLevel && !dodge)
         {
+            AudioSource.PlayClipAtPoint(PlayerDamage, gameObject.transform.position);
             curHP = Mathf.Clamp(curHP - damage, 0, maxHP);
             healthBar.fillAmount = (float)curHP / (float)maxHP;
             if (curHP == 0)
             {
                 animator.SetBool("Dead", true);
+                AudioSource.PlayClipAtPoint(PlayerDeath, gameObject.transform.position);
                 dead = true;
             }
         }
