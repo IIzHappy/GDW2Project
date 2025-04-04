@@ -177,8 +177,11 @@ MonoBehaviour:
   damage: 0
   attackDelay: 6
   pauseTime: 0.5
+  quack: {fileID: 8300000, guid: 18d55bf95553def4b8aec8d6cc31a296, type: 3}
+  death: {fileID: 8300000, guid: c87d3570d111fdf4f90944376343f163, type: 3}
   heal: {fileID: 3811137887605026532, guid: 0bd70b6fc6859d247a31378acf590df1, type: 3}
   changed: 0
+  enemyHealSound: {fileID: 8300000, guid: d313b8469d5642345afa8a8a98645247, type: 3}
 --- !u!58 &5464398792602643813
 CircleCollider2D:
   m_ObjectHideFlags: 0

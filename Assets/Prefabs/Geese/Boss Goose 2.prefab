@@ -176,8 +176,11 @@ MonoBehaviour:
   damage: 0
   attackDelay: 7.5
   pauseTime: 0.4
+  quack: {fileID: 8300000, guid: f95ef9187a74c8345a2081d4a64dee30, type: 3}
+  death: {fileID: 8300000, guid: 9df91650614f62d469a23b88f56746ea, type: 3}
   bulletPrefab: {fileID: 127565487151566155, guid: 9aa143fce18727b48a3574f75eccada4, type: 3}
   enemyM: {fileID: 0}
+  boss2Attack: {fileID: 8300000, guid: 9e045039324539945bc418383bfcef2d, type: 3}
 --- !u!95 &2341529888542297474
 Animator:
   serializedVersion: 7

@@ -176,7 +176,10 @@ MonoBehaviour:
   damage: 1
   attackDelay: 1.5
   pauseTime: 0.2
+  quack: {fileID: 8300000, guid: ab4076fb07afbeb438a03813748c6b38, type: 3}
+  death: {fileID: 8300000, guid: c87d3570d111fdf4f90944376343f163, type: 3}
   bulletPrefab: {fileID: 8194197411572369089, guid: 2d385c5c85a2b5549b002c40dbcbfe5c, type: 3}
+  enemyBulletSound: {fileID: 8300000, guid: e8743ee96515de74ba78b6e1e83d2ebd, type: 3}
 --- !u!95 &3249765234623444397
 Animator:
   serializedVersion: 7
