@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
@@ -15,8 +17,14 @@ public class MainMenu : MonoBehaviour
         
     }
 
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1f);
+    }
+
     public void LoadMainMenu()
     {
+        StartCoroutine(Wait());
         SceneManager.LoadScene(0);
     }
 }
