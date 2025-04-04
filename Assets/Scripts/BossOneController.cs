@@ -7,7 +7,7 @@ public class BossOneController : EnemyController
 {
     public GameObject BossBeam;
     public GameObject enemyM;
-    public AudioSource AudioSource;
+    
    
 
    

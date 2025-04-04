@@ -4800,6 +4800,14 @@ PrefabInstance:
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 854355461}
+    - target: {fileID: 1548916191693955524, guid: 59ff341e71be8a547834a6cec95a30d7, type: 3}
+      propertyPath: levelStart
+      value: 
+      objectReference: {fileID: 8300000, guid: a8c78994ef96e2f4997309f889c1a65f, type: 3}
+    - target: {fileID: 1548916191693955524, guid: 59ff341e71be8a547834a6cec95a30d7, type: 3}
+      propertyPath: spawnTimer
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1911491094859000133, guid: 59ff341e71be8a547834a6cec95a30d7, type: 3}
       propertyPath: m_Name
       value: Level

@@ -6412,6 +6412,7 @@ MonoBehaviour:
   waveChange: 0
   bossKilled: 0
   lvlNum: 1
+  levelStart: {fileID: 8300000, guid: a8c78994ef96e2f4997309f889c1a65f, type: 3}
 --- !u!4 &1164351302
 Transform:
   m_ObjectHideFlags: 0
