@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -10,9 +11,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] List<Sprite> skins;
 
     [SerializeField] Image healthBar;
+    [SerializeField] Image shootCooldown;
+    [SerializeField] Image dashCooldown;
 
     [SerializeField] GameObject upgradeScreen;
     [SerializeField] GameObject UIScreen;
+    [SerializeField] GameObject LoseScreen;
 
     public int maxHP;
     public int curHP;
@@ -23,6 +27,7 @@ public class PlayerController : MonoBehaviour
     public float upgradeSpeed;
 
     public float baseAttackDelay;
+    private float numUpgradeDelay = 1f;
     private float attackDelay;
     private float attackTimer;
     private Vector2 mouseAim;
@@ -56,7 +61,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && dodgeCooldown < 0f && !dodge)
         {
             dodge = true;
-            rb.AddForce(move * 15);
+            rb.AddForce(move * 40);
+            gameObject.GetComponent<Collider2D>().enabled = false;
         }
         if (dodge)
         {
@@ -64,6 +70,7 @@ public class PlayerController : MonoBehaviour
             if (dodgeTimer < 0)
             {
                 dodge = false;
+                gameObject.GetComponent<Collider2D>().enabled = true;
                 dodgeTimer = dodgeTime;
                 dodgeCooldown = 3f;
             }
@@ -71,6 +78,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             dodgeCooldown -= Time.deltaTime;
+            dashCooldown.fillAmount = dodgeCooldown/3f;
         }
     }
 
@@ -122,6 +130,7 @@ public class PlayerController : MonoBehaviour
             attackTimer = attackDelay;
         }
         attackTimer -= Time.deltaTime;
+        shootCooldown.fillAmount = attackTimer/attackDelay;
     }
 
     public void TakeDamage(int damage)
@@ -133,6 +142,7 @@ public class PlayerController : MonoBehaviour
             if (curHP == 0)
             {
                 Time.timeScale = 0;
+                LoseScreen.SetActive(true);
             }
         }
     }
@@ -146,11 +156,13 @@ public class PlayerController : MonoBehaviour
     {
         maxHP += change;
         curHP += change;
+        healthBar.fillAmount = (float)curHP / (float)maxHP;
     }
 
     public void UpgradeAttackSpeed(float change)
     {
-        attackDelay -= change;
+        attackDelay -= (change)/numUpgradeDelay;
+        numUpgradeDelay++;
     }
 
     public void UpgradeAttackDamage()
@@ -165,7 +177,10 @@ public class PlayerController : MonoBehaviour
 
     public void UpgradeArmour()
     {
-        armourLevel++;
+        if (armourLevel < 5)
+        {
+            armourLevel++;
+        }
     }
 
     public void StartUpgrade()
@@ -182,6 +197,16 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PickUp"))
@@ -191,6 +216,7 @@ public class PlayerController : MonoBehaviour
             {
                 curHP = maxHP;
             }
+            healthBar.fillAmount = (float)curHP / (float)maxHP;
             Destroy(collision.gameObject);
         }
     }
