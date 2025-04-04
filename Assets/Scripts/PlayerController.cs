@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip PlayerDeath;
     public AudioClip PlayerDamage;
     public AudioClip WeaponThrow;
-    //public AudioClip WeaponGunSound;
+    public AudioClip UpgradeOpenSound;
 
     void Start()
     {
@@ -212,6 +212,7 @@ public class PlayerController : MonoBehaviour
 
     public void StartUpgrade()
     {
+        AudioSource.PlayClipAtPoint(UpgradeOpenSound, gameObject.transform.position);
         UIScreen.SetActive(false);
         upgradeScreen.SetActive(true);
         Time.timeScale = 0;

@@ -255,6 +255,7 @@ MonoBehaviour:
   PlayerDeath: {fileID: 8300000, guid: ea8718d0a71de6249a70df1e17ab2e68, type: 3}
   PlayerDamage: {fileID: 8300000, guid: b8281da84d7afe54e95185bbe78b2164, type: 3}
   WeaponThrow: {fileID: 8300000, guid: 592afa8f0698d7a49a2edaf5c18d6682, type: 3}
+  UpgradeOpenSound: {fileID: 8300000, guid: 9ec6a2d3228a80e4491661868a77efae, type: 3}
 --- !u!95 &344518888977133477
 Animator:
   serializedVersion: 7

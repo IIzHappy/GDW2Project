@@ -352,6 +352,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2522302414394552601, guid: 1a11af644dc31a44aa3ec14219e6cfe0, type: 3}
     - target: {fileID: 5285285619105121044, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
+      propertyPath: UpgradeOpenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ec6a2d3228a80e4491661868a77efae, type: 3}
+    - target: {fileID: 5285285619105121044, guid: aa9f390c2a836794b9689070f217ac86, type: 3}
       propertyPath: 'projectiles.Array.data[0]'
       value: 
       objectReference: {fileID: 2522302414394552601, guid: 1a11af644dc31a44aa3ec14219e6cfe0, type: 3}
