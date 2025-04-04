@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
     private float dodgeTimer = 0.3f;
     private float dodgeCooldown = 3f;
 
+    public Animator animator;
+
     void Start()
     {
         attackDelay = baseAttackDelay;
@@ -141,6 +143,7 @@ public class PlayerController : MonoBehaviour
             healthBar.fillAmount = (float)curHP / (float)maxHP;
             if (curHP == 0)
             {
+                animator.SetBool("Dead", true);
                 Time.timeScale = 0;
                 LoseScreen.SetActive(true);
             }
