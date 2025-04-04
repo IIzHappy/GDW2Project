@@ -6167,6 +6167,7 @@ MonoBehaviour:
   spawnArea: {x: 10, y: 6}
   spawnTimer: 1
   enemyManagerGO: {fileID: 1164351300}
+  winScreen: {fileID: 0}
   timer: 0
   timer2: 0
   waveNum: 1
@@ -10236,8 +10237,11 @@ MonoBehaviour:
   rb: {fileID: 8153720368132711595}
   skins: []
   healthBar: {fileID: 8178692445211574261}
+  shootCooldown: {fileID: 0}
+  dashCooldown: {fileID: 0}
   upgradeScreen: {fileID: 2978039331615183709}
   UIScreen: {fileID: 6012344856316586530}
+  LoseScreen: {fileID: 0}
   maxHP: 5
   curHP: 0
   moveSpeed: 38
@@ -10250,6 +10254,7 @@ MonoBehaviour:
   curProjectile: {fileID: 2743244988897241797, guid: aa20a41a77df2fc4ba147104f14648dd, type: 3}
   rotatePos: {fileID: 1376036155268280479}
   spawnPos: {fileID: 3909451976299127320}
+  animator: {fileID: 8153720368132711596}
 --- !u!1 &5790995317886917479
 GameObject:
   m_ObjectHideFlags: 0
@@ -10508,6 +10513,7 @@ GameObject:
   - component: {fileID: 8153720368132711595}
   - component: {fileID: 2583690001170273489}
   - component: {fileID: 5495790242339347519}
+  - component: {fileID: 8153720368132711596}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -10559,6 +10565,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &8153720368132711596
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7278550300706593719}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d95078b90398a4c419d165f9202d8cde, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &8178692445211574261
 MonoBehaviour:
   m_ObjectHideFlags: 0
