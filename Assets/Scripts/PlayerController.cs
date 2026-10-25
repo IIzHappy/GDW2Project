@@ -83,12 +83,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && dodgeCooldown < 0f && !dodge)
-        {
-            dodge = true;
-            rb.AddForce(move * 40);
-            gameObject.GetComponent<Collider2D>().enabled = false;
-        }
         if (dodge)
         {
             dodgeTimer -= Time.deltaTime;
@@ -115,11 +109,12 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
+ 
     void FixedUpdate()
     {
-        move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
+        move = move.normalized * moveSpeed;
         rb.AddForce(move);
+        move = new Vector2(0, 0);
 
         mouseAim = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position) - rotatePos.position;
         float angle = Mathf.Atan2(mouseAim.y, mouseAim.x) * Mathf.Rad2Deg;
@@ -166,6 +161,36 @@ public class PlayerController : MonoBehaviour
         }
         attackTimer -= Time.deltaTime;
         shootCooldown.fillAmount = attackTimer/attackDelay;
+    }
+
+    public void Dodge()
+    {
+        if (dodgeCooldown < 0f && !dodge)
+        {
+            dodge = true;
+            rb.AddForce(move * 40);
+            gameObject.GetComponent<Collider2D>().enabled = false;
+        }
+    }
+
+    public void MoveUp()
+    {
+        move.y = 1f;
+    }
+
+    public void MoveDown()
+    {
+        move.y -= 1f;
+    }
+
+    public void MoveRight()
+    {
+        move.x = 1f;
+    }
+
+    public void MoveLeft()
+    {
+        move.x = -1f;
     }
 
     public void TakeDamage(int damage)
