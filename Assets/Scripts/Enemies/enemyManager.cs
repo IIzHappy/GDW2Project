@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class enemyManager : MonoBehaviour
 {
+    public static enemyManager Instance;
+
+    [SerializeField] float _spawnDistance = 10f;
+
     [SerializeField] GameObject enemy1;
     [SerializeField] GameObject enemy2;
     [SerializeField] GameObject enemy3;
@@ -14,9 +18,9 @@ public class enemyManager : MonoBehaviour
     [SerializeField] float spawnTimer;
     [SerializeField] GameObject enemyManagerGO;
     [SerializeField] GameObject winScreen;
-   public float timer;
+    public float timer;
     public float timer2;
-   public float waveNum = 1f;
+    public float waveNum = 1f;
     public float universalTimer;
     public GameObject Player;
     private PlayerController pc;
@@ -27,10 +31,51 @@ public class enemyManager : MonoBehaviour
     public bool bossKilled = false;
     public int lvlNum;
     public AudioClip levelStart;
+
+    void Awake()
+    {
+        if (Instance != null)
+        {
+            if (Instance != this) Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     void Start()
     {
         pc = Player.GetComponent<PlayerController>();
         AudioSource.PlayClipAtPoint(levelStart, gameObject.transform.position);
+    }
+
+    void SpawnEnemy()
+    {
+        GenerateSpawnPos();
+    }
+
+    private Vector3 GenerateSpawnPos()
+    {
+
+        int angle = UnityEngine.Random.Range(0, 360);
+        Vector3 position = new Vector3(Mathf.Sin(angle), Mathf.Cos(angle), 0);
+
+        float n = UnityEngine.Random.value > 0.5f ? -1f : 1f;
+        if (UnityEngine.Random.value > 0.5f)
+        {
+            position.x = UnityEngine.Random.Range(-spawnArea.x, spawnArea.x);
+            position.y = spawnArea.y * n;
+        }
+        else
+        {
+            position.y = UnityEngine.Random.Range(-spawnArea.y, spawnArea.y);
+            position.x = spawnArea.x * n;
+        }
+        position.z = 0;
+
+        return position;
     }
 
     private void Update()

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;
+
     [SerializeField] Rigidbody2D rb;
 
     [SerializeField] List<Sprite> skins;
@@ -60,6 +62,15 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         Time.timeScale = 1;
+        if (Instance != null)
+        {
+            if (Instance != this) Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     void Start()
