@@ -15,6 +15,8 @@ public class enemyManager : MonoBehaviour
     [SerializeField] GameObject boss1;
     [SerializeField] GameObject boss2;
     [SerializeField] Vector2 spawnArea;
+    [SerializeField] LayerMask _colCheckLayers;
+    Collider2D _colCheck;
     [SerializeField] float spawnTimer;
     [SerializeField] GameObject enemyManagerGO;
     [SerializeField] GameObject winScreen;
@@ -47,8 +49,10 @@ public class enemyManager : MonoBehaviour
 
     void Start()
     {
-        pc = Player.GetComponent<PlayerController>();
+        pc = PlayerController.Instance;
+        Player = pc.gameObject;
         AudioSource.PlayClipAtPoint(levelStart, gameObject.transform.position);
+        _colCheckLayers = LayerMask.GetMask("Water");
     }
 
     void SpawnEnemy()
@@ -58,24 +62,19 @@ public class enemyManager : MonoBehaviour
 
     private Vector3 GenerateSpawnPos()
     {
-
-        int angle = UnityEngine.Random.Range(0, 360);
-        Vector3 position = new Vector3(Mathf.Sin(angle), Mathf.Cos(angle), 0);
-
-        float n = UnityEngine.Random.value > 0.5f ? -1f : 1f;
-        if (UnityEngine.Random.value > 0.5f)
+        const int maxAttempts = 100;
+        for (int i = 0; i < maxAttempts; i++)
         {
-            position.x = UnityEngine.Random.Range(-spawnArea.x, spawnArea.x);
-            position.y = spawnArea.y * n;
-        }
-        else
-        {
-            position.y = UnityEngine.Random.Range(-spawnArea.y, spawnArea.y);
-            position.x = spawnArea.x * n;
-        }
-        position.z = 0;
+            float radians = UnityEngine.Random.Range(0, 360) * Mathf.Deg2Rad;
+            Vector3 position = new Vector3(Mathf.Sin(radians), Mathf.Cos(radians), 0) * _spawnDistance + Player.transform.position;
+            
+            _colCheck = Physics2D.OverlapCircle(position, 3, _colCheckLayers);
 
-        return position;
+            if(_colCheck != null) return position;
+            
+        }
+        Debug.LogWarning("Couldn't find spawn pos");
+        return Vector3.zero;
     }
 
     private void Update()
@@ -517,6 +516,7 @@ public class enemyManager : MonoBehaviour
 
     private Vector3 GenerateSpawnPosition()
     {
+        return GenerateSpawnPos();
         Vector3 position = new Vector3();
 
         float n = UnityEngine.Random.value > 0.5f ? -1f : 1f;

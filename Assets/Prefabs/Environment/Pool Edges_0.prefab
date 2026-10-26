@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8080765353975295201}
   - component: {fileID: 56225988687147999}
   - component: {fileID: 6177712982310827425}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pool Edges_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
