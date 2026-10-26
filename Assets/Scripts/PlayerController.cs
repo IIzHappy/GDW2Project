@@ -62,15 +62,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         Time.timeScale = 1;
-        if (Instance != null)
-        {
-            if (Instance != this) Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        Instance = this;
     }
 
     void Start()

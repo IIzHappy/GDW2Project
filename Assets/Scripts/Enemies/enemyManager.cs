@@ -1,10 +1,20 @@
+using NUnit.Framework;
 using System.Threading;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class enemyManager : MonoBehaviour
 {
     public static enemyManager Instance;
+    [SerializeField] List<LevelDataSO> _levels = new List<LevelDataSO>();
+    int _curLevel = 0;
+    float _spawnTimer;
+    float _spawnDelay;
+    Queue<EnemyWave> _enemyWaves;
+    EnemySpawner _waveEnemy;
+    int _waveSpawns;
+    int _waveSpawned;
 
     [SerializeField] float _spawnDistance = 10f;
 
@@ -55,7 +65,71 @@ public class enemyManager : MonoBehaviour
         _colCheckLayers = LayerMask.GetMask("Water");
     }
 
-    void SpawnEnemy()
+
+    void LoadWave()
+    {
+
+        if (_enemyWaves.Count == 0)
+        {
+            LoadLevel();
+        }
+    }
+
+    void LoadLevel()
+    {
+        if (_curLevel >= _levels.Count)
+        {
+            //End game
+            return;
+        }
+        foreach (EnemyWave wave in _levels[_curLevel]._enemySpawns)
+        {
+            _enemyWaves.Enqueue(wave);
+        }
+        _curLevel++;
+    }
+
+    private void Update()
+    {
+        if(_spawnTimer >= _spawnDelay)
+        {
+            if(_waveEnemy != null)
+            {
+                SpawnEnemy(_waveEnemy);
+                _waveSpawned++;
+                _spawnTimer -= _spawnDelay;
+
+                if (_waveSpawned >= _waveSpawns)
+                {
+
+                }
+            }
+        }
+        timer -= Time.deltaTime;
+        timer2 -= Time.deltaTime;
+        universalTimer += Time.deltaTime;
+        
+
+
+        if (Boss == null && Boss2 == null)
+        {
+            bossKilled = true;
+        }
+        if (waveNum == 11)
+        {
+            if (lvlNum == 3)
+            {
+                winScreen.SetActive(true);
+                Time.timeScale = 0;
+            }
+            else
+            {
+                SceneManager.LoadScene(lvlNum + 1);
+            }
+        }
+    }
+
+    void SpawnEnemy(EnemySpawner spawner)
     {
         GenerateSpawnPos();
     }
@@ -76,70 +150,6 @@ public class enemyManager : MonoBehaviour
         Debug.LogWarning("Couldn't find spawn pos");
         return Vector3.zero;
     }
-
-    private void Update()
-    {
-        timer -= Time.deltaTime;
-        timer2 -= Time.deltaTime;
-        universalTimer += Time.deltaTime;
-        if( waveNum == 1)
-        {
-            waveOneSpawning();
-        }
-        if( waveNum == 2)
-        {
-            waveTwoSpawning();
-        }
-        if (waveNum == 3)
-        {
-            waveThreeSpawning();
-        }
-        if (waveNum == 4)
-        {
-            waveFourSpawning();
-        }
-        if (waveNum == 5)
-        {
-            waveFiveSpawning();
-        }
-        if (waveNum == 6)
-        {
-            waveSixSpawning();
-        }
-        if (waveNum == 7)
-        {
-            waveSevenSpawning();
-        }
-        if (waveNum == 8)
-        {
-            waveEightSpawning();
-        }
-        if (waveNum == 9)
-        {
-            waveNineSpawning();
-        }
-        if (waveNum == 10)
-        {
-            waveTenSpawning();
-        }
-        if (Boss == null && Boss2 == null)
-        {
-            bossKilled = true;
-        }
-        if (waveNum == 11)
-        {
-            if (lvlNum == 3)
-            {
-                winScreen.SetActive(true);
-                Time.timeScale = 0;
-            }
-            else
-            {
-                SceneManager.LoadScene(lvlNum + 1);
-            }
-        }
-    }
-
 
 
 
