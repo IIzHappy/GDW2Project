@@ -10,8 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49d01b7c7d8474f4e91abd648fb7e079, type: 3}
-  m_Name: LevelKaiSpawner
+  m_Name: Wave 2
   m_EditorClassIdentifier: 
-  _levelName: 'Level 1 '
   _scene: 1
-  _enemySpawns: []
+  _enemySpawns:
+  - _waveDelay: 3
+    _spawnDelay: 0.9
+    _enemy: {fileID: 11400000, guid: a0180e293d4a0634982e3d7b94d38777, type: 2}
+    _count: 15
+  - _waveDelay: 1
+    _spawnDelay: 1
+    _enemy: {fileID: 11400000, guid: 9f29980723d91f44b80c2dfc59979196, type: 2}
+    _count: 5

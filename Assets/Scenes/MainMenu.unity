@@ -324,7 +324,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3023a013444df84a8cc195b21d92ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levels: []
+  _levels:
+  - {fileID: 11400000, guid: 403bcecc8e7c90f43aedebc6231689bb, type: 2}
+  - {fileID: 11400000, guid: f1cfb099060a00e4ab9f12d1420bd59b, type: 2}
+  - {fileID: 11400000, guid: 70e170a5bb382e047b2f8f34407fff9f, type: 2}
+  - {fileID: 11400000, guid: 28fe7c9ed8d013b4c9f6cb7adbd1f7c7, type: 2}
+  - {fileID: 11400000, guid: 952747fadc69037418522bef8722c5d0, type: 2}
+  - {fileID: 11400000, guid: a6de3ac2ba5ad704596f5dc372d20de0, type: 2}
+  - {fileID: 11400000, guid: 8968f05046a9d3d47b76baea193f358f, type: 2}
+  - {fileID: 11400000, guid: 059e1f2e69139824bbaf686a11db3f0e, type: 2}
+  - {fileID: 11400000, guid: fc8e8e698fe78ea41b70e50b2373b481, type: 2}
+  - {fileID: 11400000, guid: 0525f08ba27f20643b4f344bd27ae99a, type: 2}
+  - {fileID: 11400000, guid: cae1c856e1ec2ff4a9e0f83a387e0f25, type: 2}
+  - {fileID: 11400000, guid: 8cac71a7502a4be4190560a1bee9997d, type: 2}
+  winScreen: {fileID: 0}
 --- !u!4 &1076452614
 Transform:
   m_ObjectHideFlags: 0
@@ -474,6 +487,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f16789c4f170443854a2bc484f8442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawning: 0
+  _colCheckLayers:
+    serializedVersion: 2
+    m_Bits: 0
   _spawnDistance: 10
   enemy1: {fileID: 0}
   enemy2: {fileID: 0}
@@ -482,12 +499,8 @@ MonoBehaviour:
   boss1: {fileID: 0}
   boss2: {fileID: 0}
   spawnArea: {x: 0, y: 0}
-  _colCheckLayers:
-    serializedVersion: 2
-    m_Bits: 0
   spawnTimer: 0
   enemyManagerGO: {fileID: 0}
-  winScreen: {fileID: 0}
   timer: 0
   timer2: 0
   waveNum: 1

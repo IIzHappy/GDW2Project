@@ -1,10 +1,10 @@
 using UnityEngine;
 
 [System.Serializable]
-public class EnemyWave : MonoBehaviour
+public class EnemyWave
 {
-    public int _waveDelay;
-    public int _spawnDelay;
+    public float _waveDelay = 1;
+    public float _spawnDelay = 1;
     public EnemySpawner _enemy;
-    public int _count;
+    [Min (1)]public int _count = 10;
 }
