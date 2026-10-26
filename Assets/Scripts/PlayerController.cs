@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             dodgeCooldown -= Time.deltaTime;
-            dashCooldown.fillAmount = dodgeCooldown/3f;
+            dashCooldown.fillAmount = dodgeCooldown / 3f;
         }
 
         if (dead)
@@ -108,59 +108,68 @@ public class PlayerController : MonoBehaviour
                 Die();
             }
         }
-    }
- 
-    void FixedUpdate()
-    {
-        move = move.normalized * moveSpeed;
-        rb.AddForce(move);
-        move = new Vector2(0, 0);
 
-        mouseAim = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position) - rotatePos.position;
-        float angle = Mathf.Atan2(mouseAim.y, mouseAim.x) * Mathf.Rad2Deg;
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            EnemyRewind[] rewindEnemies = FindObjectsByType<EnemyRewind>(FindObjectsSortMode.None);
+            foreach (EnemyRewind enemy in rewindEnemies)
+            {
+                enemy.StartRewinding();
+            }
+        }
 
-        rotatePos.rotation = Quaternion.AngleAxis(angle + 180, Vector3.forward);
-        if (Mathf.Abs(angle) < 90 && faceLeft)
+        void FixedUpdate()
         {
-            Debug.Log("turn right");
-            faceLeft = false;
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            if (decals !=  null)
+            move = move.normalized * moveSpeed;
+            rb.AddForce(move);
+            move = new Vector2(0, 0);
+
+            mouseAim = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position) - rotatePos.position;
+            float angle = Mathf.Atan2(mouseAim.y, mouseAim.x) * Mathf.Rad2Deg;
+
+            rotatePos.rotation = Quaternion.AngleAxis(angle + 180, Vector3.forward);
+            if (Mathf.Abs(angle) < 90 && faceLeft)
             {
-                decals.transform.localScale = new Vector3(-decals.transform.localScale.x, decals.transform.localScale.y, decals.transform.localScale.z);
+                Debug.Log("turn right");
+                faceLeft = false;
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                if (decals != null)
+                {
+                    decals.transform.localScale = new Vector3(-decals.transform.localScale.x, decals.transform.localScale.y, decals.transform.localScale.z);
+                }
+                if (weapon.tag == "WeaponFlip")
+                {
+                    weapon.transform.localScale = new Vector3(weapon.transform.localScale.x, -weapon.transform.localScale.y, weapon.transform.localScale.z);
+                    weapon.transform.localPosition = new Vector3(weapon.transform.localPosition.x, -weapon.transform.localPosition.y, weapon.transform.localPosition.z);
+                }
             }
-            if (weapon.tag == "WeaponFlip")
+            else if (Mathf.Abs(angle) > 90 && !faceLeft)
             {
-                weapon.transform.localScale = new Vector3(weapon.transform.localScale.x, -weapon.transform.localScale.y, weapon.transform.localScale.z);
-                weapon.transform.localPosition = new Vector3(weapon.transform.localPosition.x, -weapon.transform.localPosition.y, weapon.transform.localPosition.z);
+                Debug.Log("turn left");
+                faceLeft = true;
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+                if (decals != null)
+                {
+                    decals.transform.localScale = new Vector3(-decals.transform.localScale.x, decals.transform.localScale.y, decals.transform.localScale.z);
+                }
+                if (weapon.tag == "WeaponFlip")
+                {
+                    weapon.transform.localScale = new Vector3(weapon.transform.localScale.x, -weapon.transform.localScale.y, weapon.transform.localScale.z);
+                    weapon.transform.localPosition = new Vector3(weapon.transform.localPosition.x, -weapon.transform.localPosition.y, weapon.transform.localPosition.z);
+                }
             }
+            if (attackTimer <= 0)
+            {
+                Debug.Log("player attack");
+                AudioSource.PlayClipAtPoint(WeaponThrow, gameObject.transform.position);
+                GameObject temp = Instantiate(curProjectile, spawnPos.position, Quaternion.AngleAxis(angle, Vector3.forward));
+                temp.GetComponent<ProjectileController>().direction = mouseAim.normalized;
+                temp.GetComponent<ProjectileController>().UpgradeDamage(2 * damageLevel);
+                attackTimer = attackDelay;
+            }
+            attackTimer -= Time.deltaTime;
+            shootCooldown.fillAmount = attackTimer / attackDelay;
         }
-        else if (Mathf.Abs(angle) > 90 && !faceLeft)
-        {
-            Debug.Log("turn left");
-            faceLeft = true;
-            gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            if (decals != null)
-            {
-                decals.transform.localScale = new Vector3(-decals.transform.localScale.x, decals.transform.localScale.y, decals.transform.localScale.z);
-            }
-            if (weapon.tag == "WeaponFlip")
-            {
-                weapon.transform.localScale = new Vector3(weapon.transform.localScale.x, -weapon.transform.localScale.y, weapon.transform.localScale.z);
-                weapon.transform.localPosition = new Vector3(weapon.transform.localPosition.x, -weapon.transform.localPosition.y, weapon.transform.localPosition.z);
-            }
-        }
-        if (attackTimer <= 0)
-        {
-            Debug.Log("player attack");
-            AudioSource.PlayClipAtPoint(WeaponThrow, gameObject.transform.position);
-            GameObject temp = Instantiate(curProjectile, spawnPos.position, Quaternion.AngleAxis(angle, Vector3.forward));
-            temp.GetComponent<ProjectileController>().direction = mouseAim.normalized;
-            temp.GetComponent<ProjectileController>().UpgradeDamage(2 * damageLevel);
-            attackTimer = attackDelay;
-        }
-        attackTimer -= Time.deltaTime;
-        shootCooldown.fillAmount = attackTimer/attackDelay;
     }
 
     public void Dodge()
