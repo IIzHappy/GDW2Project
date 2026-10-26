@@ -21,6 +21,7 @@ public class MenuManager : MonoBehaviour
     {
         StartCoroutine(Wait());
         SceneManager.LoadScene(startGame);
+        GameManager.Instance.StartGame();
     }
     public void MainMenu()
     {

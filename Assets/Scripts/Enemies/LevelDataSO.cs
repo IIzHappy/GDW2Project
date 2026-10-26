@@ -7,5 +7,6 @@ using UnityEngine;
 public class LevelDataSO : ScriptableObject
 {
     public string _levelName = "Level ";
+    public int _scene = 1;
     public List<EnemyWave> _enemySpawns;
 }

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d01b7c7d8474f4e91abd648fb7e079, type: 3}
   m_Name: LevelKaiSpawner
   m_EditorClassIdentifier: 
-  _levelName: 'Level '
+  _levelName: 'Level 1 '
+  _scene: 1
   _enemySpawns: []

@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class enemyManager : MonoBehaviour
 {
     public static enemyManager Instance;
+
+    public bool _spawning = false;
+
     float _spawnTimer;
     float _spawnDelay;
     float _waveDelay;
@@ -15,6 +18,8 @@ public class enemyManager : MonoBehaviour
     int _waveSpawns;
     int _waveSpawned;
 
+    [SerializeField] LayerMask _colCheckLayers;
+    Collider2D _colCheck;
     [SerializeField] float _spawnDistance = 10f;
 
     [SerializeField] GameObject enemy1;
@@ -24,11 +29,8 @@ public class enemyManager : MonoBehaviour
     [SerializeField] GameObject boss1;
     [SerializeField] GameObject boss2;
     [SerializeField] Vector2 spawnArea;
-    [SerializeField] LayerMask _colCheckLayers;
-    Collider2D _colCheck;
     [SerializeField] float spawnTimer;
     [SerializeField] GameObject enemyManagerGO;
-    [SerializeField] GameObject winScreen;
     public float timer;
     public float timer2;
     public float waveNum = 1f;
@@ -84,10 +86,10 @@ public class enemyManager : MonoBehaviour
         _spawnDelay = wave._spawnDelay;
     }
 
-    
-
     private void Update()
     {
+        if (!_spawning) return;
+
         //delay between waves
         if (_waveDelay > 0) _waveDelay -= Time.deltaTime;
         else
@@ -123,8 +125,7 @@ public class enemyManager : MonoBehaviour
         {
             if (lvlNum == 3)
             {
-                winScreen.SetActive(true);
-                Time.timeScale = 0;
+                
             }
             else
             {
