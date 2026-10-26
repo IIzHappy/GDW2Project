@@ -7,10 +7,9 @@ using UnityEngine.SceneManagement;
 public class enemyManager : MonoBehaviour
 {
     public static enemyManager Instance;
-    [SerializeField] List<LevelDataSO> _levels = new List<LevelDataSO>();
-    int _curLevel = 0;
     float _spawnTimer;
     float _spawnDelay;
+    float _waveDelay;
     Queue<EnemyWave> _enemyWaves;
     EnemySpawner _waveEnemy;
     int _waveSpawns;
@@ -65,43 +64,48 @@ public class enemyManager : MonoBehaviour
         _colCheckLayers = LayerMask.GetMask("Water");
     }
 
-
-    void LoadWave()
+    public void LoadLevel(List<EnemyWave> enemyWaves)
     {
-
-        if (_enemyWaves.Count == 0)
-        {
-            LoadLevel();
-        }
-    }
-
-    void LoadLevel()
-    {
-        if (_curLevel >= _levels.Count)
-        {
-            //End game
-            return;
-        }
-        foreach (EnemyWave wave in _levels[_curLevel]._enemySpawns)
+        foreach (EnemyWave wave in enemyWaves)
         {
             _enemyWaves.Enqueue(wave);
         }
-        _curLevel++;
+        LoadWave();
     }
+
+    public void LoadWave()
+    {
+        EnemyWave wave = _enemyWaves.Dequeue();
+        _waveEnemy = wave._enemy;
+        _waveSpawned = 0;
+        _waveSpawns = wave._count;
+        _waveDelay = wave._waveDelay - _spawnTimer;
+        _spawnTimer = 0;
+        _spawnDelay = wave._spawnDelay;
+    }
+
+    
 
     private void Update()
     {
-        if(_spawnTimer >= _spawnDelay)
+        //delay between waves
+        if (_waveDelay > 0) _waveDelay -= Time.deltaTime;
+        else
         {
-            if(_waveEnemy != null)
+            //spawning delay
+            _spawnTimer += Time.deltaTime;
+
+            if (_spawnTimer >= _spawnDelay)
             {
+                _spawnTimer -= _spawnDelay;
+
                 SpawnEnemy(_waveEnemy);
                 _waveSpawned++;
-                _spawnTimer -= _spawnDelay;
 
                 if (_waveSpawned >= _waveSpawns)
                 {
-
+                    if (_enemyWaves.Count == 0) GameManager.Instance.LoadLevel();
+                    else LoadWave();
                 }
             }
         }
