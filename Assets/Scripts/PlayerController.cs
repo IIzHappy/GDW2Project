@@ -12,14 +12,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] List<Sprite> skins;
 
-    [SerializeField] Image healthBar;
-    [SerializeField] Image shootCooldown;
-    [SerializeField] Image dashCooldown;
-
-    [SerializeField] GameObject upgradeScreen;
-    [SerializeField] GameObject UIScreen;
-    [SerializeField] GameObject LoseScreen;
-
     public int maxHP;
     public int curHP;
     private bool dead;
@@ -60,13 +52,10 @@ public class PlayerController : MonoBehaviour
     {
         if (Instance != null)
         {
-            if (Instance != this) Destroy(this);
+            if (Instance != this) Destroy(Instance);
         }
-        else
-        {
-            Instance = this;
-            enemyManager.Instance._player = gameObject.transform;
-        }
+        Instance = this;
+        enemyManager.Instance._player = gameObject.transform;
     }
 
     void Start()
@@ -92,7 +81,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             dodgeCooldown -= Time.deltaTime;
-            dashCooldown.fillAmount = dodgeCooldown / 3f;
+            UIManager.Instance.UpdateDodgeCD(dodgeCooldown / 3f);
         }
 
         if (dead)
@@ -146,17 +135,22 @@ public class PlayerController : MonoBehaviour
                 attackTimer = attackDelay;
             }
             attackTimer -= Time.deltaTime;
-            shootCooldown.fillAmount = attackTimer / attackDelay;
+            UIManager.Instance.UpdateShootCD(attackTimer / attackDelay);
         }
     }
 
-    public void SwitchWeapon(int weapon)
+
+    public void UpdateLevel(int weapon)
     {
+        ResetHP();
+        if (weapon != _curWeapon)
+        {
         _weapons[_curWeapon].DecalOnOff(false);
         _weapons[_curWeapon].gameObject.SetActive(false);
         _curWeapon = weapon;
         _weapons[_curWeapon].gameObject.SetActive(true);
         _weapons[_curWeapon].DecalOnOff(true);
+        }
     }
 
     public void Dodge()
@@ -195,7 +189,7 @@ public class PlayerController : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(PlayerDamage, gameObject.transform.position);
             curHP = Mathf.Clamp(curHP - damage, 0, maxHP);
-            healthBar.fillAmount = (float)curHP / (float)maxHP;
+            UIManager.Instance.UpdateHealth((float)curHP / (float)maxHP);
             if (curHP == 0)
             {
                 animator.SetBool("Dead", true);
@@ -219,7 +213,7 @@ public class PlayerController : MonoBehaviour
     {
         maxHP += change;
         curHP += change;
-        healthBar.fillAmount = (float)curHP / (float)maxHP;
+        UIManager.Instance.UpdateHealth((float)curHP / (float)maxHP);
     }
 
     public void UpgradeAttackSpeed(float change)
@@ -249,27 +243,14 @@ public class PlayerController : MonoBehaviour
     public void StartUpgrade()
     {
         AudioSource.PlayClipAtPoint(UpgradeOpenSound, gameObject.transform.position);
-        UIScreen.SetActive(false);
-        upgradeScreen.SetActive(true);
+        UIManager.Instance.UpgradeScreen(true);
         Time.timeScale = 0;
     }
 
     public void EndUpgrade()
     {
-        UIScreen.SetActive(true);
-        upgradeScreen.SetActive(false);
+        UIManager.Instance.UpgradeScreen(true);
         Time.timeScale = 1;
-    }
-
-    public void MainMenu()
-    {
-        SceneManager.LoadScene(0);
-        Time.timeScale = 1;
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -281,7 +262,7 @@ public class PlayerController : MonoBehaviour
             {
                 curHP = maxHP;
             }
-            healthBar.fillAmount = (float)curHP / (float)maxHP;
+            UIManager.Instance.UpdateHealth((float)curHP / (float)maxHP);
             Destroy(collision.gameObject);
         }
     }

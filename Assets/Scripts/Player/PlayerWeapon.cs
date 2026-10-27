@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Player Weapon", menuName = "New Player Weapon")]
-[System.Serializable]
 public class PlayerWeapon : MonoBehaviour
 {
     public Transform weapon;

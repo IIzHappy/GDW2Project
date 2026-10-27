@@ -10,9 +10,6 @@ public class GameManager : MonoBehaviour
     int _curLevel = 0;
     int _curScene = 1;
 
-    [SerializeField] GameObject winScreen;
-    [SerializeField] GameObject loseScreen;
-
     void Awake()
     {
         if (Instance != null)
@@ -48,7 +45,7 @@ public class GameManager : MonoBehaviour
         {
             _curScene = _levels[_curLevel]._scene;
             SceneManager.LoadScene(_curScene);
-            PlayerController.Instance.SwitchWeapon(_curScene - 1);
+            PlayerController.Instance.UpdateLevel(_curScene - 1);
         }
 
         enemyManager.Instance.LoadLevel(_levels[_curLevel]._enemySpawns);
@@ -58,13 +55,13 @@ public class GameManager : MonoBehaviour
     public void GameLoss()
     {
         Time.timeScale = 0;
-        loseScreen.SetActive(true);
+        UIManager.Instance.GameEnd(false);
         enemyManager.Instance._spawning = false;
     }
 
     public void GameWon()
     {
-        winScreen.SetActive(true);
+        UIManager.Instance.GameEnd(false);
         Time.timeScale = 0;
         enemyManager.Instance._spawning = false;
     }
