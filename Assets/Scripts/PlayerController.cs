@@ -62,8 +62,11 @@ public class PlayerController : MonoBehaviour
         {
             if (Instance != this) Destroy(this);
         }
-        else Instance = this;
-        enemyManager.Instance._player = gameObject.transform;
+        else
+        {
+            Instance = this;
+            enemyManager.Instance._player = gameObject.transform;
+        }
     }
 
     void Start()
@@ -149,9 +152,11 @@ public class PlayerController : MonoBehaviour
 
     public void SwitchWeapon(int weapon)
     {
+        _weapons[_curWeapon].DecalOnOff(false);
         _weapons[_curWeapon].gameObject.SetActive(false);
         _curWeapon = weapon;
         _weapons[_curWeapon].gameObject.SetActive(true);
+        _weapons[_curWeapon].DecalOnOff(true);
     }
 
     public void Dodge()

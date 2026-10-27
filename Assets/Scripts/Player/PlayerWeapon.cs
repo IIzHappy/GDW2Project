@@ -30,4 +30,12 @@ public class PlayerWeapon : MonoBehaviour
         temp.GetComponent<ProjectileController>().direction = shootDir.normalized;
         temp.GetComponent<ProjectileController>().UpgradeDamage(2 * damageLevel);
     }
+
+    public void DecalOnOff(bool on)
+    {
+        if (decal != null)
+        {
+            decal.gameObject.SetActive(on);
+        }
+    }
 }

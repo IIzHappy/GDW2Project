@@ -93,6 +93,7 @@ public class InputHandler : MonoBehaviour
 
     private void Start()
     {
+        _pc = gameObject.GetComponent<PlayerController>();
         buttonA = new MoveLeft(_pc);
         buttonS = new MoveDown(_pc);
         buttonD = new MoveRight(_pc);
