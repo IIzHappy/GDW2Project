@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     {
         if (_curLevel >= _levels.Count)
         {
-            //End game
+            GameWon();
             return;
         }
 
@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         {
             _curScene = _levels[_curLevel]._scene;
             SceneManager.LoadScene(_curScene);
+            PlayerController.Instance.SwitchWeapon(_curScene - 1);
         }
 
         enemyManager.Instance.LoadLevel(_levels[_curLevel]._enemySpawns);

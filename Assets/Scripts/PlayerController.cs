@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 move;
     public float upgradeSpeed;
 
+    public List<PlayerWeapon> _weapons = new List<PlayerWeapon>();
+    int _curWeapon = 0;
     public float baseAttackDelay;
     private float numUpgradeDelay = 1f;
     private float attackDelay;
@@ -38,12 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private int damageLevel = 0;
 
-    [SerializeField] GameObject weapon;
-    [SerializeField] GameObject decals;
-    [SerializeField] List<GameObject> projectiles;
-    public GameObject curProjectile;
     public Transform rotatePos;
-    public Transform spawnPos;
 
     private bool faceLeft = true;
 
@@ -63,9 +60,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Instance != null)
         {
-            if (Instance != this) Destroy(Instance);
+            if (Instance != this) Destroy(this);
         }
-        Instance = this;
+        else Instance = this;
         enemyManager.Instance._player = gameObject.transform;
     }
 
@@ -74,7 +71,6 @@ public class PlayerController : MonoBehaviour
         attackDelay = baseAttackDelay;
         attackTimer = attackDelay;
         curHP = maxHP;
-        curProjectile = projectiles[0];
     }
 
     void Update()
@@ -129,43 +125,33 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("turn right");
                 faceLeft = false;
                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
-                if (decals != null)
-                {
-                    decals.transform.localScale = new Vector3(-decals.transform.localScale.x, decals.transform.localScale.y, decals.transform.localScale.z);
-                }
-                if (weapon.tag == "WeaponFlip")
-                {
-                    weapon.transform.localScale = new Vector3(weapon.transform.localScale.x, -weapon.transform.localScale.y, weapon.transform.localScale.z);
-                    weapon.transform.localPosition = new Vector3(weapon.transform.localPosition.x, -weapon.transform.localPosition.y, weapon.transform.localPosition.z);
-                }
+                _weapons[_curWeapon].FlipWeapon();
+                
             }
             else if (Mathf.Abs(angle) > 90 && !faceLeft)
             {
                 Debug.Log("turn left");
                 faceLeft = true;
                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
-                if (decals != null)
-                {
-                    decals.transform.localScale = new Vector3(-decals.transform.localScale.x, decals.transform.localScale.y, decals.transform.localScale.z);
-                }
-                if (weapon.tag == "WeaponFlip")
-                {
-                    weapon.transform.localScale = new Vector3(weapon.transform.localScale.x, -weapon.transform.localScale.y, weapon.transform.localScale.z);
-                    weapon.transform.localPosition = new Vector3(weapon.transform.localPosition.x, -weapon.transform.localPosition.y, weapon.transform.localPosition.z);
-                }
+                _weapons[_curWeapon].FlipWeapon();
             }
             if (attackTimer <= 0)
             {
                 Debug.Log("player attack");
                 AudioSource.PlayClipAtPoint(WeaponThrow, gameObject.transform.position);
-                GameObject temp = Instantiate(curProjectile, spawnPos.position, Quaternion.AngleAxis(angle, Vector3.forward));
-                temp.GetComponent<ProjectileController>().direction = mouseAim.normalized;
-                temp.GetComponent<ProjectileController>().UpgradeDamage(2 * damageLevel);
+                _weapons[_curWeapon].SpawnProjectile(mouseAim, damageLevel);
                 attackTimer = attackDelay;
             }
             attackTimer -= Time.deltaTime;
             shootCooldown.fillAmount = attackTimer / attackDelay;
         }
+    }
+
+    public void SwitchWeapon(int weapon)
+    {
+        _weapons[_curWeapon].gameObject.SetActive(false);
+        _curWeapon = weapon;
+        _weapons[_curWeapon].gameObject.SetActive(true);
     }
 
     public void Dodge()
