@@ -54,8 +54,8 @@ public class GameManager : MonoBehaviour
 
     public void GameLoss()
     {
-        Time.timeScale = 0;
         UIManager.Instance.GameEnd(false);
+        Time.timeScale = 0;
         enemyManager.Instance._spawning = false;
     }
 

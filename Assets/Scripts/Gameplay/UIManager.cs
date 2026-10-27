@@ -57,14 +57,15 @@ public class UIManager : MonoBehaviour
     public void GameEnd(bool win)
     {
         if (win) WinScreen.SetActive(true);
-        else LoseScreen.SetActive(false);
+        else LoseScreen.SetActive(true);
     }
     public void MainMenu()
     {
+        enemyManager.Instance.ClearManager();
         SceneManager.LoadScene(0);
-        Time.timeScale = 1;
         Destroy(PlayerController.Instance.gameObject);
         Destroy(gameObject);
+        Time.timeScale = 1;
     }
     public void QuitGame()
     {

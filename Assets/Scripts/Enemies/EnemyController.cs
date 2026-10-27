@@ -30,10 +30,10 @@ public class EnemyController : MonoBehaviour
     public AudioClip death;
 
 
-    void Awake()
+    void Start()
     {
         health = maxHealth;
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = PlayerController.Instance.gameObject;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
     }

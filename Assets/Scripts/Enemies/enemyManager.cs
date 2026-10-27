@@ -45,6 +45,21 @@ public class enemyManager : MonoBehaviour
         _colCheckLayer = LayerMask.GetMask("Water");
     }
 
+    public void ClearManager()
+    {
+        _spawnTimer = 0;
+        _waveDelay = 0;
+        _enemyWaves.Clear();
+        _waveEnemy = null;
+        _waveSpawns = 0;
+        _waveSpawned = 0;
+
+        foreach(Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
     public void LoadLevel(List<EnemyWave> enemyWaves)
     {
         foreach (EnemyWave wave in enemyWaves)

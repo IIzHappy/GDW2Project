@@ -2848,7 +2848,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a03eda158347e498b2e2feb5cf3e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UIPages: []
   gameScreen: {fileID: 3054956338668997737}
   upgradeScreen: {fileID: 5783008597470655766}
   healthBar: {fileID: 618624970994850238}

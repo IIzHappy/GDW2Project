@@ -24,7 +24,7 @@ public class PlayerWeapon : MonoBehaviour
 
     public void SpawnProjectile(Vector2 shootDir, int damageLevel)
     {
-        GameObject temp = Instantiate(projectile, spawnPos.position, Quaternion.LookRotation(Vector3.forward, shootDir));
+        GameObject temp = Instantiate(projectile, spawnPos.position, Quaternion.FromToRotation(Vector3.right, shootDir));
         temp.GetComponent<ProjectileController>().direction = shootDir.normalized;
         temp.GetComponent<ProjectileController>().UpgradeDamage(2 * damageLevel);
     }
