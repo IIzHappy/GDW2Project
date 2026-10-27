@@ -84,7 +84,7 @@ public class DoNothing : Command
 
 public class InputHandler : MonoBehaviour
 {
-    [SerializeField] PlayerController _pc;
+    PlayerController _pc;
     Command buttonA;
     Command buttonS;
     Command buttonD;
