@@ -951,17 +951,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1929739390738771257}
   skins: []
-  healthBar: {fileID: 0}
-  shootCooldown: {fileID: 0}
-  dashCooldown: {fileID: 0}
-  upgradeScreen: {fileID: 0}
-  UIScreen: {fileID: 0}
-  LoseScreen: {fileID: 0}
   maxHP: 5
   curHP: 0
   moveSpeed: 38
   upgradeSpeed: 2
-  _weapons: []
+  _weapons:
+  - {fileID: 4461702485566542384}
+  - {fileID: 8215327770642691553}
+  - {fileID: 1317305376753103794}
   baseAttackDelay: 1
   rotatePos: {fileID: 2550445244920019034}
   animator: {fileID: 5593893900229568450}
@@ -1003,7 +1000,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f54ed4e226ef4d4ba77b83a8515df40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pc: {fileID: 0}
 --- !u!1 &7101172506043004846
 GameObject:
   m_ObjectHideFlags: 0

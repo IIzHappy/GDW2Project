@@ -91,9 +91,12 @@ public class InputHandler : MonoBehaviour
     Command buttonW;
     Command button_Space;
 
-    private void Start()
+    private void Awake()
     {
         _pc = gameObject.GetComponent<PlayerController>();
+    }
+    private void Start()
+    {
         buttonA = new MoveLeft(_pc);
         buttonS = new MoveDown(_pc);
         buttonD = new MoveRight(_pc);

@@ -101,9 +101,6 @@ public class PlayerController : MonoBehaviour
                 enemy.StartRewinding();
             }
         }
-
-        void FixedUpdate()
-        {
             move = move.normalized * moveSpeed;
             rb.AddForce(move);
             move = new Vector2(0, 0);
@@ -136,7 +133,7 @@ public class PlayerController : MonoBehaviour
             }
             attackTimer -= Time.deltaTime;
             UIManager.Instance.UpdateShootCD(attackTimer / attackDelay);
-        }
+        
     }
 
 
