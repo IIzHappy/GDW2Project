@@ -1,5 +1,7 @@
 Jake Hyland: One command and DLL
+
 Rachel Dong: Singletons and factories
+
 Sean Russett: One command and write ups
 
 
