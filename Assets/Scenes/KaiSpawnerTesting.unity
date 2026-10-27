@@ -3644,7 +3644,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5b65fc99b90629343bbbef7e35a6f451, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 5b65fc99b90629343bbbef7e35a6f451, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.101
@@ -6502,6 +6502,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -6758,6 +6759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f16789c4f170443854a2bc484f8442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnDistance: 10
   enemy1: {fileID: 5655816207760407807, guid: 31f3c2af9c5eefe41bacb7f7d8b364d1, type: 3}
   enemy2: {fileID: 189536196262968610, guid: cda5a9f777409f742a554d66c874be14, type: 3}
   enemy3: {fileID: 5063438183895218230, guid: 332d1b61d28e7344091965cc0a516e97, type: 3}
@@ -7908,7 +7910,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bc2018b9d61ee8b4b84a5c5038865a77, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: bc2018b9d61ee8b4b84a5c5038865a77, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
@@ -10402,6 +10404,7 @@ GameObject:
   - component: {fileID: 2583690001170273489}
   - component: {fileID: 5495790242339347519}
   - component: {fileID: 8153720368132711596}
+  - component: {fileID: 8153720368132711597}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -10475,6 +10478,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8153720368132711597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7278550300706593719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f54ed4e226ef4d4ba77b83a8515df40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pc: {fileID: 5495790242339347519}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
