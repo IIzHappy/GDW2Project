@@ -1,8 +1,8 @@
-Jake Hyland: One command and DLL
+Jake Hyland 100975343: One command and DLL
 
-Rachel Dong: Singletons and factories
+Rachel Dong 100963735: Singletons and factories
 
-Sean Russett: One command and write ups
+Sean Russett 100963434: One command and write ups
 
 
 The purpose of this scenario is to be an enjoyable gameplay experience for the player.
