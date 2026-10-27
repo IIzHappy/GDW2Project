@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2004545940473224075}
   - component: {fileID: 7897928798736168534}
   - component: {fileID: 2078783970844508792}
+  - component: {fileID: 5747958619975232871}
   m_Layer: 6
   m_Name: TankGoose
   m_TagString: Enemy
@@ -200,6 +201,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5747958619975232871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5063438183895218230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ce7ba4775f0342488fd7790592d79b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posRecordInterval: 0.1
+  rewindTime: 3
 --- !u!1001 &4412313368608609704
 PrefabInstance:
   m_ObjectHideFlags: 0

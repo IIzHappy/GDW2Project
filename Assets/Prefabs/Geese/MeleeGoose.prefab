@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8236747965402568885}
   - component: {fileID: 6753686739583635999}
   - component: {fileID: 5439747579286768763}
+  - component: {fileID: 2045946929171851177}
   m_Layer: 6
   m_Name: MeleeGoose
   m_TagString: Enemy
@@ -200,6 +201,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2045946929171851177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5655816207760407807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ce7ba4775f0342488fd7790592d79b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posRecordInterval: 0.1
+  rewindTime: 3
 --- !u!1001 &4505903990135623943
 PrefabInstance:
   m_ObjectHideFlags: 0
