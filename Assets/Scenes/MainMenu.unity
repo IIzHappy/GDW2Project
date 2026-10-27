@@ -338,6 +338,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cae1c856e1ec2ff4a9e0f83a387e0f25, type: 2}
   - {fileID: 11400000, guid: 8cac71a7502a4be4190560a1bee9997d, type: 2}
   winScreen: {fileID: 0}
+  loseScreen: {fileID: 0}
 --- !u!4 &1076452614
 Transform:
   m_ObjectHideFlags: 0
@@ -488,30 +489,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawning: 0
-  _colCheckLayers:
-    serializedVersion: 2
-    m_Bits: 0
   _spawnDistance: 10
-  enemy1: {fileID: 0}
-  enemy2: {fileID: 0}
-  enemy3: {fileID: 0}
-  enemy4: {fileID: 0}
-  boss1: {fileID: 0}
-  boss2: {fileID: 0}
-  spawnArea: {x: 0, y: 0}
-  spawnTimer: 0
-  enemyManagerGO: {fileID: 0}
-  timer: 0
-  timer2: 0
-  waveNum: 1
-  universalTimer: 0
-  Player: {fileID: 0}
-  Boss: {fileID: 0}
-  Boss2: {fileID: 0}
-  waveChange: 0
-  bossKilled: 0
-  lvlNum: 0
-  levelStart: {fileID: 0}
+  _player: {fileID: 0}
+  levelStart: {fileID: 8300000, guid: a8c78994ef96e2f4997309f889c1a65f, type: 3}
 --- !u!4 &1203061898
 Transform:
   m_ObjectHideFlags: 0

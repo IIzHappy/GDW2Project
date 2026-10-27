@@ -61,8 +61,12 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        Time.timeScale = 1;
+        if (Instance != null)
+        {
+            if (Instance != this) Destroy(Instance);
+        }
         Instance = this;
+        enemyManager.Instance._player = gameObject.transform;
     }
 
     void Start()
@@ -212,8 +216,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        Time.timeScale = 0;
-        LoseScreen.SetActive(true);
+        GameManager.Instance.GameLoss();
     }
 
     public void ResetHP()

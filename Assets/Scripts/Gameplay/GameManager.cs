@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     int _curScene = 1;
 
     [SerializeField] GameObject winScreen;
+    [SerializeField] GameObject loseScreen;
 
     void Awake()
     {
@@ -29,8 +30,9 @@ public class GameManager : MonoBehaviour
     {
         _curLevel = 0;
         _curScene = 1;
-        enemyManager.Instance._spawning = true;
         LoadLevel();
+        Time.timeScale = 1;
+        enemyManager.Instance._spawning = true;
     }
 
     public void LoadLevel()
@@ -54,12 +56,15 @@ public class GameManager : MonoBehaviour
 
     public void GameLoss()
     {
-
+        Time.timeScale = 0;
+        loseScreen.SetActive(true);
+        enemyManager.Instance._spawning = false;
     }
 
     public void GameWon()
     {
         winScreen.SetActive(true);
         Time.timeScale = 0;
+        enemyManager.Instance._spawning = false;
     }
 }
