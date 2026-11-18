@@ -5,12 +5,15 @@ public class ProjectileController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private int damage;
     [SerializeField] private float lifeSpan;
+    float _timer = 0;
     [SerializeField] private bool expire = false;
     [SerializeField] private bool destroyOnCollision = true;
     [SerializeField] private bool explode = false;
     [SerializeField] private GameObject explosion;
 
     [SerializeField] private Rigidbody2D rb;
+
+    public PlayerWeapon _weapon;
 
     public Vector2 direction;
     
@@ -23,10 +26,10 @@ public class ProjectileController : MonoBehaviour
     {
         if (expire)
         {
-            lifeSpan -= Time.deltaTime;
-            if (lifeSpan <= 0)
+            _timer += Time.deltaTime;
+            if (_timer >= lifeSpan)
             {
-                Destroy(gameObject);
+                Despawn();
             }
         }
     }
@@ -69,5 +72,17 @@ public class ProjectileController : MonoBehaviour
         //    StartCoroutine(passThrough());
         //    rb.AddForce(direction * speed);
         //}
+    }
+
+    private void OnEnable()
+    {
+        _timer = 0;
+        rb.AddForce(direction * speed);
+    }
+
+    public void Despawn()
+    {
+        _weapon.DespawnProjectile(gameObject);
+        gameObject.SetActive(false);
     }
 }

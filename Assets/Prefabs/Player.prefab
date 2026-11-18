@@ -316,6 +316,7 @@ MonoBehaviour:
   spawnPos: {fileID: 240611707874299556}
   projectile: {fileID: 2522302414394552601, guid: 1a11af644dc31a44aa3ec14219e6cfe0, type: 3}
   WeaponThrow: {fileID: 8300000, guid: 94a66c7f3ab339e499107e391bb95895, type: 3}
+  _poolSize: 10
 --- !u!1 &2156662624445346790
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +779,7 @@ MonoBehaviour:
   spawnPos: {fileID: 4352907679816359780}
   projectile: {fileID: 4025758036303770734, guid: 71fbf6c7cbab0484fa7c06947837f5e0, type: 3}
   WeaponThrow: {fileID: 8300000, guid: 94a66c7f3ab339e499107e391bb95895, type: 3}
+  _poolSize: 10
 --- !u!1 &5840849790730773223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,6 +1344,7 @@ MonoBehaviour:
   spawnPos: {fileID: 219802984520457637}
   projectile: {fileID: 2743244988897241797, guid: aa20a41a77df2fc4ba147104f14648dd, type: 3}
   WeaponThrow: {fileID: 8300000, guid: 592afa8f0698d7a49a2edaf5c18d6682, type: 3}
+  _poolSize: 10
 --- !u!1001 &3442620314901470107
 PrefabInstance:
   m_ObjectHideFlags: 0

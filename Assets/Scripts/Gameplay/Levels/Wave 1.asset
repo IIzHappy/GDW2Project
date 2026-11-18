@@ -15,6 +15,6 @@ MonoBehaviour:
   _scene: 1
   _enemySpawns:
   - _waveDelay: 3
-    _spawnDelay: 1
+    _spawnDelay: 0.2
     _enemy: {fileID: 11400000, guid: a0180e293d4a0634982e3d7b94d38777, type: 2}
-    _count: 10
+    _count: 50
