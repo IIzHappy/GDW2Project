@@ -44,6 +44,7 @@ public class enemyManager : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(levelStart, gameObject.transform.position);
         _colCheckLayer = LayerMask.GetMask("Water");
+        GameManager.GameOver += GameOver;
     }
 
     public void ClearManager()
@@ -118,6 +119,11 @@ public class enemyManager : MonoBehaviour
     void SpawnEnemy(EnemySpawner spawner)
     {
         spawner.SpawnEnemy(GenerateSpawnPosition());
+    }
+
+    void GameOver(bool toss)
+    {
+        _spawning = false;
     }
 
     private Vector3 GenerateSpawnPosition()

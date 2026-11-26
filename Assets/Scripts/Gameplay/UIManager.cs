@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
         }
         Instance = this;
         PlayerController.UpdateHealth += UpdateHealth;
+        GameManager.GameOver += GameEnd;
         DontDestroyOnLoad(gameObject);
     }
     private void OnEnable()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<LevelDataSO> _levels = new List<LevelDataSO>();
     int _curLevel = 0;
     int _curScene = 1;
+
+    public static event Action<bool> GameOver;
 
     void Awake()
     {
@@ -54,15 +57,13 @@ public class GameManager : MonoBehaviour
 
     public void GameLoss()
     {
-        UIManager.Instance.GameEnd(false);
+        GameOver?.Invoke(false);
         Time.timeScale = 0;
-        enemyManager.Instance._spawning = false;
     }
 
     public void GameWon()
     {
-        UIManager.Instance.GameEnd(false);
+        GameOver?.Invoke(true);
         Time.timeScale = 0;
-        enemyManager.Instance._spawning = false;
     }
 }
