@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
         }
         Instance = this;
         enemyManager.Instance._player = gameObject.transform;
+        UIManager.ReturnToMainMenu += CleanUp;
     }
 
     void Start()
@@ -213,7 +214,7 @@ public class PlayerController : MonoBehaviour
     {
         maxHP += change;
         curHP += change;
-        UIManager.Instance.UpdateHealth((float)curHP / (float)maxHP);
+        UpdateHealth?.Invoke((float)curHP / (float)maxHP);
     }
 
     public void UpgradeAttackSpeed(float change)
@@ -253,6 +254,12 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void CleanUp()
+    {
+        SceneManager.LoadScene(0);
+        Destroy(gameObject);
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PickUp"))
@@ -262,7 +269,7 @@ public class PlayerController : MonoBehaviour
             {
                 curHP = maxHP;
             }
-            UIManager.Instance.UpdateHealth((float)curHP / (float)maxHP);
+            UpdateHealth?.Invoke((float)curHP / (float)maxHP);
             Destroy(collision.gameObject);
         }
     }

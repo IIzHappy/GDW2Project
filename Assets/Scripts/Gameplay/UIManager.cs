@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,6 +19,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject WinScreen;
     [SerializeField] GameObject LoseScreen;
 
+    public static event Action ReturnToMainMenu;
+
     void Awake()
     {
         if (Instance != null)
@@ -27,6 +30,10 @@ public class UIManager : MonoBehaviour
         Instance = this;
         PlayerController.UpdateHealth += UpdateHealth;
         DontDestroyOnLoad(gameObject);
+    }
+    private void OnEnable()
+    {
+        PlayerController.UpdateHealth += UpdateHealth;
     }
 
     private void OnDisable()
@@ -67,10 +74,8 @@ public class UIManager : MonoBehaviour
     }
     public void MainMenu()
     {
-        enemyManager.Instance.ClearManager();
-        SceneManager.LoadScene(0);
-        Destroy(PlayerController.Instance.gameObject);
         Destroy(gameObject);
+        ReturnToMainMenu?.Invoke();
         Time.timeScale = 1;
     }
     public void QuitGame()

@@ -37,6 +37,7 @@ public class enemyManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        UIManager.ReturnToMainMenu += ClearManager;
     }
 
     void Start()
