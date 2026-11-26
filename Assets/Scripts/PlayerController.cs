@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -47,6 +48,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip PlayerDamage;
     public AudioClip WeaponThrow;
     public AudioClip UpgradeOpenSound;
+    
+    public static event Action<float> UpdateHealth;
 
     void Awake()
     {
@@ -182,11 +185,11 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (Random.Range(0, 10) >= armourLevel && !dodge)
+        if (UnityEngine.Random.Range(0, 10) >= armourLevel && !dodge)
         {
             AudioSource.PlayClipAtPoint(PlayerDamage, gameObject.transform.position);
             curHP = Mathf.Clamp(curHP - damage, 0, maxHP);
-            UIManager.Instance.UpdateHealth((float)curHP / (float)maxHP);
+            UpdateHealth?.Invoke((float) curHP/ (float) maxHP);
             if (curHP == 0)
             {
                 animator.SetBool("Dead", true);

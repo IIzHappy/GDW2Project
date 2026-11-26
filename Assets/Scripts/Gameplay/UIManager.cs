@@ -25,7 +25,13 @@ public class UIManager : MonoBehaviour
             if (Instance != this) Destroy(Instance);
         }
         Instance = this;
+        PlayerController.UpdateHealth += UpdateHealth;
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void OnDisable()
+    {
+        PlayerController.UpdateHealth -= UpdateHealth;
     }
 
     public void ResetUI()
